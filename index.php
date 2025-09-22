@@ -12,7 +12,7 @@
           </div>
 
           <ul style="margin-top:14px;color:var(--muted);font-size:14px;">
-            <li>得意: PHP / TypeScript / Node.js</li>
+            <li>得意: PHP / TypeScript / AWS </li>
             <li>運用: リモート中心、都内を拠点</li>
           </ul>
         </div>
@@ -112,9 +112,28 @@
           <p>まだ記事がありません。</p>
         <?php endif; ?>
       </div>
-      <p><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">すべてのブログ記事を見る →</a></p>
+      <p><a href="/blog">すべてのブログ記事を見る →</a></p>
     </div>
   </section>
+  
+  <section id="about" style="margin-top:28px">
+        <div class="two-col">
+          <div>
+            <h3 style="margin-top:0">About</h3>
+            <p style="color:var(--muted)">これまでの経歴、専門分野、稼働時間・対応形態をここに記載します。クライアントの声や年表を入れると安心感が上がります。</p>
+            <ul style="color:var(--muted);font-size:14px">
+              <li>SaaS スタートアップでプロダクト開発（フロント/バック）</li>
+              <li>PM / テックリード経験あり</li>
+              <li>中小企業の技術支援実績多数</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin-top:0">料金の目安</h3>
+            <p style="color:var(--muted)">時間単価 / 日数 / 固定費など、案件により変動します。まずは相談ください（初回相談無料）。</p>
+          </div>
+        </div>
+      </section>
+  
 </main>
 
 <?php get_footer(); ?>
