@@ -1,0 +1,24 @@
+# WordPress 本体は除外（テーマだけ管理）
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+
+# 環境依存ファイル
+.DS_Store
+Thumbs.db
+*.log
+
+# 機密ファイル
+wp-config.php
+.env
+
+# アップロードファイルは公開しない
+wp-content/uploads/
+
+# キャッシュやビルド成果物
+node_modules/
+dist/
+vendor/
