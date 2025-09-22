@@ -33,3 +33,6 @@ function fuji_register_post_types() {
   ));
 }
 add_action('init', 'fuji_register_post_types');
+
+//アイキャッチ
+add_theme_support('post-thumbnails');
