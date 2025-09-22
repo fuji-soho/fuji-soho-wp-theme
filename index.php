@@ -8,11 +8,11 @@
           <p class="lead">受託開発、技術顧問、リファクタリングまで。小規模〜中規模チームの支援を得意としています。</p>
           <div class="hero-ctas">
             <a class="btn primary" href="#contact">仕事の相談</a>
-            <a class="btn ghost" href="#works">制作実績を見る</a>
+            <a class="btn ghost" href="/works">制作実績を見る</a>
           </div>
 
           <ul style="margin-top:14px;color:var(--muted);font-size:14px;">
-            <li>得意: React / TypeScript / Node.js</li>
+            <li>得意: PHP / TypeScript / Node.js</li>
             <li>運用: リモート中心、都内を拠点</li>
           </ul>
         </div>
@@ -29,7 +29,7 @@
             <p style="margin:6px 0;color:var(--muted);font-size:14px">フリーランスエンジニア / フルスタック</p>
             <p style="margin-top:8px;color:var(--muted);font-size:14px">クリーンで保守性の高いコード、チームで動ける設計を提供します。</p>
             <div class="tags" style="margin-top:12px">
-              <div class="tag">React</div>
+              <div class="tag">PHP</div>
               <div class="tag">TypeScript</div>
               <div class="tag">AWS</div>
             </div>

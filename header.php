@@ -27,6 +27,7 @@
     header{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
     .brand{display:flex;gap:14px;align-items:center}
     .logo-wrap{width:56px;height:56px;flex:0 0 56px}
+    .site-title-sub a{text-decoration: none;color: inherit;}
     .site-title{font-weight:700;margin:0}
     .site-sub{margin:0;font-size:13px;color:var(--muted)}
 
@@ -96,21 +97,26 @@
       <div class="brand">
         <div class="logo-wrap" aria-hidden>
           <!-- simple SVG logo -->
+          <a href="/">
           <svg viewBox="0 0 120 120" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
             <circle cx="60" cy="60" r="56" stroke="var(--primary)" stroke-width="4" fill="white"></circle>
             <path d="M18 82 L60 28 L102 82 Z" fill="var(--primary)"></path>
           </svg>
+          </a>
         </div>
-        <div>
-          <h1 class="site-title"><?php bloginfo('name'); ?></h1>
-          <p class="site-sub"><?php bloginfo('description'); ?></p>
+        <div class="site-title-sub">
+          <a href="/">
+          	<h1 class="site-title"><?php bloginfo('name'); ?></h1>
+          	<p class="site-sub"><?php bloginfo('description'); ?></p>
+          </a>
         </div>
       </div>
 
       <nav aria-label="Main navigation">
         <a href="#services">Services</a>
-        <a href="#works">Portfolio</a>
+        <a href="/works">Portfolio</a>
         <a href="#about">About</a>
+        <a href="/blog">Blog</a>
         <a class="cta" href="#contact">Contact</a>
       </nav>
     </header>
