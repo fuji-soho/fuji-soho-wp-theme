@@ -21,7 +21,7 @@
 （ここにサイトのキャプチャ画像を貼る）
 
 ## インストール方法
-1. `wp-content/themes/` ディレクトリに `fuji-soho` フォルダを配置
+1. `wp-content/themes/` ディレクトリに `fuji-soho-wp-theme` フォルダを配置
 2. WordPress 管理画面からテーマを有効化
 3. 必要に応じてカスタム投稿タイプを追加する
 
