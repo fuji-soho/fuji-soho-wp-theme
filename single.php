@@ -3,9 +3,9 @@
 <main>
   <article class="blog-detail">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
-      <header style="margin-bottom:20px">
-        <h1><?php the_title(); ?></h1>
-        <p style="color:var(--muted);font-size:14px">
+      <header class="post-header">
+        <h1 class="post-title"><?php the_title(); ?></h1>
+        <p class="post-meta">
           投稿日: <?php the_time('Y年n月j日'); ?> | カテゴリー: <?php the_category(', '); ?>
         </p>
       </header>

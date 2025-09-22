@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
       <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-top" href="/">Top</a>
         <a href="/#services">Services</a>
         <a href="/works">Portfolio</a>
         <a href="/#about">About</a>

@@ -157,3 +157,112 @@ Version: 1.0
   }
 }
 
+.work .excerpt {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+/* デフォルトは非表示（PC用） */
+.main-nav .nav-top {
+  display: none;
+}
+
+/* スマホ時だけ表示 */
+@media (max-width: 1000px) {
+  .main-nav .nav-top {
+    display: block;
+  }
+}
+
+.post-header {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 6px 0 0; /* デフォは縦並び用の余白 */
+  display: block;
+  clear: both;
+  text-align: right;
+}
+
+header.post-header {
+  display: block;
+  clear: both;
+}
+
+
+/* 記事本文ベース */
+.blog-detail .content {
+  line-height: 1.8;
+  font-size: 16px;
+  color: #333;
+}
+
+/* h2: セクションの大見出し */
+.blog-detail .content h2 {
+  font-size: 22px;
+  margin: 32px 0 16px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary);
+  font-weight: 600;
+}
+
+/* h3: 小見出し */
+.blog-detail .content h3 {
+  font-size: 18px;
+  margin: 24px 0 12px;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
+  font-weight: 600;
+}
+
+/* 段落 */
+.blog-detail .content p {
+  margin: 16px 0;
+}
+
+/* リスト */
+.blog-detail .content ul,
+.blog-detail .content ol {
+  margin: 16px 0 16px 20px;
+}
+
+/* 引用 */
+.blog-detail .content blockquote {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--primary);
+  background: #f8fafc;
+  color: #555;
+  font-style: italic;
+}
+
+/* コード */
+.blog-detail .content pre {
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 20px 0;
+  font-family: monospace;
+  font-size: 14px;
+}
+.blog-detail .content code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+
+
