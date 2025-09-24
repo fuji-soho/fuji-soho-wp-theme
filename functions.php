@@ -13,24 +13,28 @@ add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 // 制作実績のカスタム投稿タイプを登録
 function fuji_register_post_types() {
   register_post_type('works', array(
-    'labels' => array(
-      'name'          => '制作実績',
-      'singular_name' => '制作実績',
-      'add_new'       => '新規追加',
-      'add_new_item'  => '制作実績を追加',
-      'edit_item'     => '制作実績を編集',
-      'new_item'      => '新しい制作実績',
-      'view_item'     => '制作実績を表示',
-      'search_items'  => '制作実績を検索',
-      'not_found'     => '制作実績はありません',
-    ),
-    'public' => true,
-    'has_archive' => true,
-    'menu_position' => 5,
-    'menu_icon' => 'dashicons-portfolio',
-    'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
-    'rewrite' => array('slug' => 'works'),
-  ));
+  'labels' => array(
+    'name'          => '制作実績一覧',   // メニューや見出しに表示される
+    'singular_name' => '制作実績',
+    'add_new'       => '新規追加',
+    'add_new_item'  => '制作実績を追加',
+    'edit_item'     => '制作実績を編集',
+    'new_item'      => '新しい制作実績',
+    'view_item'     => '制作実績を表示',
+    'search_items'  => '制作実績を検索',
+    'not_found'     => '制作実績はありません',
+    'not_found_in_trash' => 'ゴミ箱に制作実績はありません',
+    'all_items'     => '制作実績一覧',
+    'menu_name'     => '制作実績一覧',   // サイドメニュー表記
+    'name_admin_bar'=> '制作実績',
+  ),
+  'public' => true,
+  'has_archive' => true,
+  'menu_position' => 5,
+  'menu_icon' => 'dashicons-portfolio',
+  'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+  'rewrite' => array('slug' => 'works'),
+));
 }
 add_action('init', 'fuji_register_post_types');
 
@@ -89,8 +93,16 @@ add_action('wp_head', 'fuji_output_ogp_tags');
 // パンくずリスト出力関数
 function fuji_breadcrumb() {
   global $post;
-  echo '<nav class="breadcrumb">';
-  echo '<a href="' . home_url() . '">Home</a> &gt; ';
+  echo '<nav class="breadcrumb" aria-label="パンくずリスト">';
+  echo '<a href="' . home_url() . '">
+  <span class="breadcrumb-icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7"></path>
+      <path d="M9 22V12h6v10"></path>
+    </svg>
+  </span>
+  Home
+</a> &gt; ';
 
   if (is_single()) {
     $categories = get_the_category($post->ID);
@@ -114,4 +126,64 @@ function fuji_breadcrumb() {
   }
   echo '</nav>';
 }
+
+// JSON-LD パンくずリスト
+function fuji_breadcrumb_jsonld() {
+  if (is_single() || is_page()) {
+    global $post;
+    $breadcrumbs = array();
+    $position = 1;
+
+    // Home
+    $breadcrumbs[] = array(
+      "@type" => "ListItem",
+      "position" => $position++,
+      "name" => "Home",
+      "item" => home_url()
+    );
+
+    // カテゴリー（投稿の場合）
+    if (is_single() && get_post_type() === 'post') {
+      $categories = get_the_category($post->ID);
+      if ($categories) {
+        $cat = $categories[0];
+        $breadcrumbs[] = array(
+          "@type" => "ListItem",
+          "position" => $position++,
+          "name" => $cat->name,
+          "item" => get_category_link($cat->term_id)
+        );
+      }
+    }
+
+    // 制作実績（カスタム投稿タイプ "works" の場合）
+    if (is_singular('works') || is_post_type_archive('works')) {
+        $breadcrumbs[] = array(
+          "@type" => "ListItem",
+          "position" => $position++,
+          "name" => "制作実績一覧",  // ← 表示名を変更
+          "item" => get_post_type_archive_link('works')
+        );
+    }
+
+    // 最後に現在の記事
+    $breadcrumbs[] = array(
+      "@type" => "ListItem",
+      "position" => $position++,
+      "name" => get_the_title($post->ID),
+      "item" => get_permalink($post->ID)
+    );
+
+    // JSON-LD 出力
+    $jsonld = array(
+      "@context" => "https://schema.org",
+      "@type" => "BreadcrumbList",
+      "itemListElement" => $breadcrumbs
+    );
+
+    echo '<script type="application/ld+json">' . wp_json_encode($jsonld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+  }
+}
+add_action('wp_head', 'fuji_breadcrumb_jsonld');
+
 

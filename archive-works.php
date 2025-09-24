@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <main>
+  <?php if (function_exists('fuji_breadcrumb')) fuji_breadcrumb(); ?>
   <section class="works">
-    <h2>制作実績</h2>
+    <h1>制作実績一覧</h1>
     <div class="works-grid">
       <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <article class="work">

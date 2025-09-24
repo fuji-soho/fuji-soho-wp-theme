@@ -265,16 +265,41 @@ header.post-header {
 }
 
 
+/* パンくず（h2寄せデザイン） */
 .breadcrumb {
-  display: block !important;
   font-size: 14px;
-  margin: 10px 0 20px;
+  margin: 10px 0 24px;   /* h2 に近い余白感 → margin-top増やした */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--muted);
+  border-bottom: 2px solid var(--muted); /* h2 の下線に寄せる */
+  padding-bottom: 6px;
 }
+
 .breadcrumb a {
   color: var(--primary);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500; /* h3 と揃える */
 }
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 .breadcrumb span {
   color: var(--muted);
 }
 
+.breadcrumb-icon {
+  display: inline-flex;
+  align-items: center;
+}
+.breadcrumb-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}

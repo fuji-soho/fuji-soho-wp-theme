@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main>
+  <?php if (function_exists('fuji_breadcrumb')) fuji_breadcrumb(); ?>
   <section id="blog">
     <div class="works">
       <h2>ブログ記事一覧</h2>
