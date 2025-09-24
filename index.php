@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main>
-  <?php if (function_exists('fuji_breadcrumb')) fuji_breadcrumb(); ?>
   <section class="hero">
         <div>
           <div class="eyebrow">Software & Web Development</div>
