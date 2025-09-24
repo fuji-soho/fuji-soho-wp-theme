@@ -266,6 +266,7 @@ header.post-header {
 
 
 .breadcrumb {
+  display: block !important;
   font-size: 14px;
   margin: 10px 0 20px;
 }
