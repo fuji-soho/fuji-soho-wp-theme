@@ -265,4 +265,15 @@ header.post-header {
 }
 
 
+.breadcrumb {
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+.breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.breadcrumb span {
+  color: var(--muted);
+}
 

@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main>
+  <?php fuji_breadcrumb(); ?>
   <article class="blog-detail">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
       <header class="post-header">

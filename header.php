@@ -21,9 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-  
-  
-  <?php wp_head(); ?>
+
+<?php if (is_singular()): ?>
+  <meta name="description" content="<?php 
+    $content = strip_tags( get_the_content() );   // 本文からタグを除去
+    $content = trim( preg_replace('/\s+/', ' ', $content) ); // 改行や余分な空白を1つに
+    $description = mb_substr( $content, 0, 120 ); // 120文字でカット
+    echo esc_attr( $description . ( mb_strlen($content) > 120 ? '...' : '' ) );
+  ?>">
+<?php elseif (is_home() || is_archive()): ?>
+  <meta name="description" content="<?php bloginfo('description'); ?>">
+<?php endif; ?>
+
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
   <div class="container" id="top">
