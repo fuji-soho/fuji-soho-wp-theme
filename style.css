@@ -163,13 +163,14 @@ Version: 1.0
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
   margin-top:20px;
+  background: #f8fafc;
 }
 
 .mobile-menu nav a {
   display: block;
-  padding: 14px;
+  padding: 8px 0;
   font-size: 18px;
   color: var(--primary);
   text-decoration: none;
