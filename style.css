@@ -74,19 +74,6 @@ Version: 1.0
     /* decorative big logo */
     .big-logo{position:fixed;right:28px;bottom:28px;opacity:0.12;pointer-events:none;transform:scale(1.6)}
 
-    .main-nav {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: none; /* PCでは非表示 */
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--primary);
-    }
-
     /* responsive */
     @media (max-width:1000px){
       .hero{grid-template-columns:1fr;}
@@ -102,33 +89,114 @@ Version: 1.0
       .headline{font-size:26px}
     }
     
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;   /* ← これで右寄せが確実になる */
+}
+
+.main-nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.main-nav a.cta {
+  border: 1px solid rgba(15,20,42,0.2);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+    /* ✕ボタン */
+    .menu-close {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: none; /* PCでは非表示 */
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--primary);
+    }
+    
+    .mobile-menu nav {
+      display: none; /* PCでは非表示 */
+    }
+    
     /* スマホ用 */
-    @media (max-width: 1000px) {
-      .main-nav {
-        display: none; /* 初期は隠す */
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #fff;
-        border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 8px;
-        flex-direction: column;
-        padding: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
+@media (max-width: 1000px) {
+.mobile-menu {
+  position: fixed;
+  top: 50px;
+  right: -100%;
+  width: 100%;
+  height: 50vh;
+  background: #fff;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;      /* 子要素を横幅いっぱいに */
+  transition: right 0.3s ease;
+  padding: 20px;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+  overflow-y: auto;          /* メニューが増えてもスクロール可能 */
+}
 
-      .main-nav a {
-    margin: 8px 0;
-    color: var(--muted);
-    text-decoration: none;
+/* ✕ボタン */
+.menu-close {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+}
+
+  /* ナビゲーション */
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top:20px;
+}
+
+.mobile-menu nav a {
+  display: block;
+  padding: 14px;
+  font-size: 18px;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.mobile-menu nav a:hover {
+  background: #f8f9fa;
+}
+
+  /* 開いた状態 */
+  .mobile-menu.active {
+    right: 0;
   }
 
-  .main-nav a.cta {
-    border: 1px solid rgba(15,20,42,0.06);
-    padding: 8px 12px;
-    border-radius: 10px;
+  /* 背景オーバーレイ */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
   }
-
+  .menu-overlay.active {
+    display: block;
+  }
   .menu-toggle {
     display: block;
     position: absolute;
@@ -138,6 +206,10 @@ Version: 1.0
 
   .main-nav.active {
     display: flex;
+  }
+  
+  .main-nav {
+    display:none;
   }
 }
 

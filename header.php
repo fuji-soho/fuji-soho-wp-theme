@@ -4,20 +4,31 @@
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-  
-  <script>
+
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.main-nav');
-  const icon = document.querySelector('.menu-icon');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  const closeBtn = document.querySelector('.menu-close');
 
+  // メニュー開閉
   toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    if (nav.classList.contains('active')) {
-      icon.textContent = '✕';
-    } else {
-      icon.textContent = '☰';
-    }
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  // ✕ボタンで閉じる
+  closeBtn.addEventListener('click', () => {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // オーバーレイで閉じる
+  overlay.addEventListener('click', () => {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
   });
 });
 </script>
@@ -56,17 +67,32 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a class="nav-top" href="/">Top</a>
-        <a href="/#services">Services</a>
-        <a href="/works">Portfolio</a>
-        <a href="/#about">About</a>
-        <a href="/blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <!-- ナビゲーション -->
+    <nav class="main-nav" aria-label="メインメニュー">
+      <a href="/#services">Services</a>
+      <a href="/works">Portfolio</a>
+      <a href="/blog">Brog</a>
+      <a href="/#about">About</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
       
       <!-- ハンバーガーボタン -->
-      <button class="menu-toggle" aria-label="メニューを開閉">
-        <span class="menu-icon">☰</span>
-      </button>
+      <button class="menu-toggle" aria-label="メニューを開閉">☰</button>
+      
+      <!-- スマホメニュー -->
+<div class="mobile-menu" id="mobileMenu">
+  <!-- ✕ボタン -->
+  <button class="menu-close" aria-label="メニューを閉じる">✕</button>
+
+  <nav aria-label="スマホメニュー">
+    <a href="/">Top</a>
+    <a href="/#services">Services</a>
+    <a href="/works">Portfolio</a>
+    <a href="/blog">Brog</a>
+    <a href="/#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+      
     </header>
