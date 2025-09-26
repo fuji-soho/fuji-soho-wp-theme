@@ -3,7 +3,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?2">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?7">
 
 
 <script>
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <a href="/works">制作実績</a>
       <a href="/blog">ブログ</a>
       <a href="/#about">自己紹介</a>
-      <a href="#contact" class="cta">お問い合わせ</a>
+      <a href="/contact" class="cta">お問い合わせ</a>
     </nav>
       
       <!-- ハンバーガーボタン -->
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <a href="/works">制作実績</a>
     <a href="/blog">ブログ</a>
     <a href="/#about">自己紹介</a>
-    <a href="#contact" class="cta">お問い合わせ</a>
+    <a href="/contact" class="cta">お問い合わせ</a>
   </nav>
 </div>
 <div class="menu-overlay" id="menuOverlay"></div>

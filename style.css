@@ -377,3 +377,119 @@ header.post-header {
   width: 18px;
   height: 18px;
 }
+
+/* 固定ページ */
+.page-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 6px;
+}
+.page-content {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* フォーム全体 */
+.wpcf7-form {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+/* 入力フィールド */
+.wpcf7-form-control {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* テキストエリア（高さを別調整） */
+.wpcf7-form-control.wpcf7-textarea {
+  min-height: 120px;      /* ← 高さを少し低めに調整 */
+}
+
+/* フォーカス時 */
+.wpcf7-form-control:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); /* 青いシャドウ */
+}
+
+/* 送信ボタン */
+.wpcf7-submit {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.wpcf7-submit:hover {
+  background: #1e40af; /* 少し濃い青 */
+}
+
+/* エラーメッセージ */
+.wpcf7-not-valid-tip {
+  font-size: 14px;
+  color: #dc2626;
+  margin-top: -12px;
+  margin-bottom: 0px;
+  line-height: 1.4;    /* 行間を狭める */
+  padding 0;
+}
+
+/* 完了メッセージ */
+.wpcf7-response-output {
+  margin: 12px 0;      /* ← 20px以上あったのを縮める */
+  padding: 12px;
+  padding: 8px 12px;   /* ← コンパクトに */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.wpcf7-mail-sent-ok {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #065f46;
+}
+
+.wpcf7-validation-errors {
+  background: #fef2f2;
+  border: 1px solid #dc2626;
+  color: #7f1d1d;
+}
+
+/* プライバシーポリシー同意チェック */
+/* チェックボックスとラベルを横並びに */
+.wpcf7-list-item label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* チェックボックスと文字の間隔 */
+  white-space: nowrap; /* ← 折り返し禁止 */
+}
+
+/* デフォルトの改行を消す */
+.wpcf7-list-item-label {
+  display: inline;
+}
+
+/* プライバシーポリシー同意のエラーメッセージ調整 */
+.wpcf7-form .wpcf7-not-valid-tip {
+  font-size: 14px;
+  color: #dc2626;
+  margin-top: 8px;      /* 上に少しだけ余白 */
+  margin-bottom: 16px;  /* ← ボタンとの距離を確保 */
+  display: block;
+}
+
+
