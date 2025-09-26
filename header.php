@@ -69,11 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       <!-- ナビゲーション -->
     <nav class="main-nav" aria-label="メインメニュー">
-      <a href="/#services">Services</a>
-      <a href="/works">Portfolio</a>
-      <a href="/blog">Brog</a>
-      <a href="/#about">About</a>
-      <a href="#contact" class="cta">Contact</a>
+      <a href="/#services">サービス</a>
+      <a href="/works">制作実績</a>
+      <a href="/blog">ブログ</a>
+      <a href="/#about">自己紹介</a>
+      <a href="#contact" class="cta">お問い合わせ</a>
     </nav>
       
       <!-- ハンバーガーボタン -->
@@ -85,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
   <button class="menu-close" aria-label="メニューを閉じる">✕</button>
 
   <nav aria-label="スマホメニュー">
-    <a href="/">Top</a>
-    <a href="/#services">Services</a>
-    <a href="/works">Portfolio</a>
-    <a href="/blog">Brog</a>
-    <a href="/#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="/">トップ</a>
+    <a href="/#services">サービス</a>
+    <a href="/works">制作実績</a>
+    <a href="/blog">ブログ</a>
+    <a href="/#about">自己紹介</a>
+    <a href="#contact" class="cta">お問い合わせ</a>
   </nav>
 </div>
 <div class="menu-overlay" id="menuOverlay"></div>
