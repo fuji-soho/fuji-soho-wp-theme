@@ -135,7 +135,8 @@ Version: 1.0
   right: -100%;
   width: 100%;
   height: 50vh;
-  background: #fff;
+  //background: #fff;
+   background: linear-gradient(#ffffff 0 20px, #edf2f7 60px 100%);
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -144,6 +145,7 @@ Version: 1.0
   padding: 20px;
   box-shadow: -2px 0 8px rgba(0,0,0,0.15);
   overflow-y: auto;          /* メニューが増えてもスクロール可能 */
+  border-radius: 8px 0 0 8px;
 }
 
 /* ✕ボタン */
@@ -161,25 +163,24 @@ Version: 1.0
 
   /* ナビゲーション */
 .mobile-menu nav {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top:20px;
-  background: #f8fafc;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
 
-.mobile-menu nav a {
-  display: block;
-  padding: 8px 0;
-  font-size: 18px;
-  color: var(--primary);
-  text-decoration: none;
-  border-radius: 6px;
-}
+  .mobile-menu nav a {
+    display: block;
+    padding: 8px 0;
+    font-size: 18px;
+    color: var(--primary);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+  }
 
-.mobile-menu nav a:hover {
-  background: #f8f9fa;
-}
+  .mobile-menu nav a:hover {
+    background: #e5e7eb;  /* ← hoverで少し濃く */
+  }
 
   /* 開いた状態 */
   .mobile-menu.active {
