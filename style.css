@@ -479,22 +479,23 @@ header.post-header {
 }
 
 @media (max-width: 1000px) {
-  /* 全体のflexを解除して、枠線崩れを防ぐ */
-.wpcf7-list-item {
-  display: inline-block;
-  margin: 0;
+ /* チェックボックス全体の余計な枠線をリセット */
+.wpcf7-form-control.wpcf7-checkbox {
+  border: none !important;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  display: inline-block; /* 枠で囲まず自然に表示 */
 }
 
 /* チェックボックスとラベルを横並びに */
-.wpcf7-list-item label {
+.wpcf7-list-item {
   display: flex;
   align-items: center;
   gap: 6px;
-  border: none; /* ← 不要な枠線を消す */
-  padding: 0;
+  margin: 0;
 }
 
-/* チェックボックスのサイズ固定 */
 .wpcf7-list-item input[type="checkbox"] {
   width: 20px;
   height: 20px;
@@ -502,10 +503,9 @@ header.post-header {
   flex-shrink: 0;
 }
 
-/* ラベルテキスト */
 .wpcf7-list-item-label {
-  white-space: normal; /* 折り返し許可 */
-  line-height: 1.4;
+  white-space: normal;
+  line-height: 1.5;
 }
 }
 
