@@ -479,26 +479,33 @@ header.post-header {
 }
 
 @media (max-width: 1000px) {
-  .wpcf7-list-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  /* 全体のflexを解除して、枠線崩れを防ぐ */
+.wpcf7-list-item {
+  display: inline-block;
   margin: 0;
 }
 
-/* チェックボックス */
+/* チェックボックスとラベルを横並びに */
+.wpcf7-list-item label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none; /* ← 不要な枠線を消す */
+  padding: 0;
+}
+
+/* チェックボックスのサイズ固定 */
 .wpcf7-list-item input[type="checkbox"] {
   width: 20px;
   height: 20px;
   margin: 0;
-  flex-shrink: 0; /* ← 文字を押し出さないように固定 */
+  flex-shrink: 0;
 }
 
 /* ラベルテキスト */
 .wpcf7-list-item-label {
-  display: inline-block;
-  white-space: normal;  /* ← 折り返し可能にする */
-  line-height: 1.5;
+  white-space: normal; /* 折り返し許可 */
+  line-height: 1.4;
 }
 }
 
