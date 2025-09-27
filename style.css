@@ -479,10 +479,16 @@ header.post-header {
 }
 
 @media (max-width: 1000px) {
-  .wpcf7-list-item label {
-    display: inline-block;
-    margin: 0;
-  }
+  .privacy-consent .wpcf7-list-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* チェックボックスとテキストの間隔 */
+  margin: 0;
+}
+
+.privacy-consent input[type="checkbox"] {
+  margin: 0; /* デフォルトの余白を消す */
+}
 }
 
 /* デフォルトの改行を消す */
