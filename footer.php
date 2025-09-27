@@ -8,7 +8,7 @@
         </div>
         <div>
           <div style="font-weight:600"><?php bloginfo('name'); ?></div>
-          <div style="color:var(--muted);font-size:13px">ﾂｩ <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
+          <div style="color:var(--muted);font-size:13px">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
         </div>
       </div>
       <p class="recaptcha-notice">
