@@ -478,7 +478,7 @@ header.post-header {
   white-space: nowrap; /* ← 折り返し禁止 */
 }
 
-@media (max-width: 560px) {
+@media (max-width: 1000px) {
   .wpcf7-list-item label {
     white-space: normal;   /* ← 折り返しOKに */
     align-items: flex-start;
