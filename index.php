@@ -7,7 +7,7 @@
           <h2 class="headline">信頼できるエンジニアリングと丁寧なプロダクト開発</h2>
           <p class="lead">受託開発、技術顧問、リファクタリングまで。小規模〜中規模チームの支援を得意としています。</p>
           <div class="hero-ctas">
-            <a class="btn primary" href="#contact">仕事の相談</a>
+            <a class="btn primary" href="/contact">仕事の相談</a>
             <a class="btn ghost" href="/works">制作実績を見る</a>
           </div>
 
