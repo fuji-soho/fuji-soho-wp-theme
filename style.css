@@ -532,5 +532,235 @@ header.post-header {
   visibility: hidden;
 }
 
+/* 制作実績 */
+.work-single {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+.work-header {
+  margin-bottom: 28px;
+}
 
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px; /* 少し小さめ */
+  color: var(--muted);
+  justify-content: flex-start; /* 左揃えに */
+}
+
+
+.work-meta .meta-item {
+  background: var(--card);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.work-title {
+  font-size: 28px;
+  margin: 0;
+}
+.work-lead {
+  font-size: 16px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.work-body {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 左を広く */
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.work-main {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* セクション間の余白 */
+}
+
+.work-section {
+  padding: 20px;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.work-section h2 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: var(--primary);
+}
+
+.work-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 中身は上寄せ */
+}
+
+.info-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.info-card p,
+.info-card ul {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.info-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-card li {
+  margin: 4px 0;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-list li {
+  background: var(--card);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  border: 1px solid rgba(0,0,0,0.05);
+  color: var(--muted);
+}
+
+.work-related {
+  margin-top: 48px;
+}
+.work-related h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 16px;
+}
+
+.work-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.work-tech {
+  margin: 32px 0;
+}
+
+.work-tech h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.work-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin: 20px 0 32px;
+  align-items: start;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  
+  .work-hero {
+    display: block;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    margin: 20px 0 32px;
+    align-items: start;
+  }
+  
+  .work-thumb {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 高さを16:9に固定 */
+    margin-bottom: 20px;
+    overflow: hidden; /* はみ出し防止 */
+  }
+
+  .work-thumb-inner {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .work-thumb-inner img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 縦横比を維持しつつトリミング */
+    border-radius: var(--radius);
+  }
+}
+
+
+/* メタ情報カード */
+.work-meta-cards {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); /* 3つを均等に */
+  gap: 16px;
+  height: 100%;
+}
+
+.works-grid .work .thumb{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.works-grid .work .thumb img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr; /* 1列にする */
+  }
+}
+
+@media (min-width:1024px){ .works-grid{ grid-template-columns: repeat(3, 1fr); } }
+@media (min-width:640px) and (max-width:1023px){ .works-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:639px){ .works-grid{ grid-template-columns: 1fr; } }
 

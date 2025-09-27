@@ -34,12 +34,37 @@ function fuji_register_post_types() {
   'menu_icon' => 'dashicons-portfolio',
   'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
   'rewrite' => array('slug' => 'works'),
+  'taxonomies' => array('work_category'),
 ));
 }
 add_action('init', 'fuji_register_post_types');
 
+// 制作実績カテゴリーを登録
+function fuji_register_taxonomies() {
+  register_taxonomy('work_category', 'works', array(
+    'labels' => array(
+      'name' => '制作実績カテゴリー',
+      'singular_name' => '制作実績カテゴリー',
+    ),
+    'hierarchical' => true, // trueにすると通常のカテゴリ型
+    'show_admin_column' => true,
+    'show_ui' => true, // ★管理画面に表示
+    'show_in_menu' => true, // ★左メニューに表示
+    'rewrite' => array('slug' => 'work-category'),
+  ));
+}
+add_action('init', 'fuji_register_taxonomies');
+
 //アイキャッチon
-add_theme_support('post-thumbnails');
+//add_theme_support('post-thumbnails');
+//制作実績のページのアイキャッチトリミング
+//add_image_size('work-thumb', 1600, 900, true); // 16:9でトリミング
+//add_image_size('work-card', 600, 338, true);   // 16:9でトリミング
+add_action('after_setup_theme', function () {
+  add_theme_support('post-thumbnails');
+  add_image_size('work-thumb', 1600, 900, true); // 個別ページの16:9
+  add_image_size('work-card', 600, 338, true);   // 関連カードの16:9
+});
 
 // OGPタグを出力する関数
 function fuji_output_ogp_tags() {
@@ -201,4 +226,101 @@ function custom_honeypot_validation($result, $tag) {
 }
 add_filter('wpcf7_validate_text', 'custom_honeypot_validation', 10, 2);
 add_filter('wpcf7_validate_text*', 'custom_honeypot_validation', 10, 2);
+
+// 制作実績
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+    'key' => 'group_work_detail',
+    'title' => '制作実績詳細情報',
+    'fields' => array(
+        array(
+            'key' => 'field_work_overview',
+            'label' => '概要',
+            'name' => 'work_overview',
+            'type' => 'textarea',
+            'instructions' => '制作実績のリード文（100文字程度）',
+            'rows' => 3,
+        ),
+        array(
+            'key' => 'field_work_challenges',
+            'label' => '課題',
+            'name' => 'work_challenges',
+            'type' => 'textarea',
+            'instructions' => '案件の課題や背景',
+            'rows' => 4,
+        ),
+        array(
+            'key' => 'field_work_solution',
+            'label' => '解決アプローチ',
+            'name' => 'work_solution',
+            'type' => 'textarea',
+            'instructions' => '課題に対してどう取り組んだか',
+            'rows' => 4,
+        ),
+        array(
+            'key' => 'field_work_result',
+            'label' => '成果',
+            'name' => 'work_result',
+            'type' => 'textarea',
+            'instructions' => '成果や効果（定量/定性どちらでもOK）',
+            'rows' => 4,
+        ),
+        array(
+            'key' => 'field_work_period',
+            'label' => '制作期間',
+            'name' => 'work_period',
+            'type' => 'text',
+            'instructions' => '例: 2025年1月〜3月（約3ヶ月）',
+        ),
+        array(
+            'key' => 'field_work_scope',
+            'label' => '担当範囲',
+            'name' => 'work_scope',
+            'type' => 'checkbox',
+            'choices' => array(
+                'frontend' => 'フロントエンド',
+                'backend' => 'バックエンド',
+                'infra' => 'インフラ',
+                'design' => '設計/アーキテクチャ',
+                'pm' => 'プロジェクト管理',
+                'other' => 'その他',
+            ),
+            'layout' => 'vertical',
+        ),
+        array(
+            'key' => 'field_work_tech',
+            'label' => '使用技術',
+            'name' => 'work_tech',
+            'type' => 'checkbox',
+            'choices' => array(
+                'react' => 'React',
+                'ts' => 'TypeScript',
+                'nextjs' => 'Next.js',
+                'node' => 'Node.js',
+                'laravel' => 'PHP / Laravel',
+                'wordpress' => 'WordPress',
+                'aws' => 'AWS',
+                'gcp' => 'GCP',
+                'docker' => 'Docker',
+                'other' => 'その他',
+            ),
+            'layout' => 'vertical',
+            'allow_custom' => 1, // ユーザーが自由に追加可
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'works',
+            ),
+        ),
+    ),
+));
+
+endif;
+
+
 
