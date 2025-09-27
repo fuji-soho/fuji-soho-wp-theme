@@ -479,16 +479,27 @@ header.post-header {
 }
 
 @media (max-width: 1000px) {
-  .wpcf7-list-item label {
-    display: flex;          /* ← inline-flex だと幅が縮まるので flex に変更 */
-    flex-wrap: wrap;        /* ← 折り返しを許可 */
-    white-space: normal;    /* ← nowrap を上書き */
-  }
+  .wpcf7-list-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
 
-  .wpcf7-list-item-label {
-    flex: 1 1 100%;         /* ← 2行目以降をチェックボックスの下に回り込ませる */
-    margin-left: 28px;      /* ← チェックボックス分のインデント */
-  }
+/* チェックボックス */
+.wpcf7-list-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  flex-shrink: 0; /* ← 文字を押し出さないように固定 */
+}
+
+/* ラベルテキスト */
+.wpcf7-list-item-label {
+  display: inline-block;
+  white-space: normal;  /* ← 折り返し可能にする */
+  line-height: 1.5;
+}
 }
 
 /* デフォルトの改行を消す */
