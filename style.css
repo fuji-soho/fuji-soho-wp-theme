@@ -480,8 +480,8 @@ header.post-header {
 
 @media (max-width: 1000px) {
   .wpcf7-list-item label {
-    white-space: normal;   /* ← 折り返しOKに */
-    align-items: flex-start;
+    display: inline-block;
+    margin: 0;
   }
 }
 
