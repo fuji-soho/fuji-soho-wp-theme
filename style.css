@@ -497,5 +497,9 @@ header.post-header {
   display: none !important;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 
 

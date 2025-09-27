@@ -11,7 +11,12 @@
           <div style="color:var(--muted);font-size:13px">ﾂｩ <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
         </div>
       </div>
-      <div style="color:var(--muted)">Made with care 窶｢ Remote Friendly</div>
+      <p class="recaptcha-notice">
+  		このサイトは reCAPTCHA によって保護されており、
+  		<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a> と
+  		<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a> が適用されます。
+	  </p>
+      <div style="color:var(--muted)">Made with care Remote Friendly</div>
     </footer>
   </div><!-- /.container -->
 
