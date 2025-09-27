@@ -186,4 +186,19 @@ function fuji_breadcrumb_jsonld() {
 }
 add_action('wp_head', 'fuji_breadcrumb_jsonld');
 
+//ハニーポッド
+function custom_honeypot_validation($result, $tag) {
+  $tag = new WPCF7_FormTag($tag);
+  $name = $tag->name;
+
+  if ($name == 'hp-check-name') { // ← フィールド名を変更
+    $value = isset($_POST[$name]) ? trim($_POST[$name]) : '';
+    if ($value !== '') {
+      $result->invalidate($tag, "入力に誤りがあります。");
+    }
+  }
+  return $result;
+}
+add_filter('wpcf7_validate_text', 'custom_honeypot_validation', 10, 2);
+add_filter('wpcf7_validate_text*', 'custom_honeypot_validation', 10, 2);
 

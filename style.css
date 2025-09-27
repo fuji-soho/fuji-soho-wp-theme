@@ -493,3 +493,9 @@ header.post-header {
 }
 
 
+.hidden-field {
+  display: none !important;
+}
+
+
+
