@@ -8,13 +8,13 @@
         </div>
         <div>
           <div style="font-weight:600"><?php bloginfo('name'); ?></div>
-          <div style="color:var(--muted);font-size:13px">© <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
+          <div style="color:var(--muted);font-size:13px">ﾂｩ <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
         </div>
       </div>
       <p class="recaptcha-notice">
-  		���̃T�C�g�� reCAPTCHA �ɂ���ĕی삳��Ă���A
-  		<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">�v���C�o�V�[�|���V�[</a> ��
-  		<a href="https://policies.google.com/terms" target="_blank" rel="noopener">���p�K��</a> ���K�p����܂��B
+  		このサイトは reCAPTCHA によって保護されており、
+  		<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a> と
+  		<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a> が適用されます。
 	  </p>
       <div style="color:var(--muted)">Made with care Remote Friendly</div>
     </footer>
