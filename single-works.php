@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php if (function_exists('fuji_breadcrumb')) fuji_breadcrumb(); ?>
 <div class="container work-single">
 
   <!-- タイトル & 概要 -->
@@ -13,6 +14,18 @@
     </div>
   <?php endif; ?>
 </header>
+
+<?php
+$terms = get_the_terms(get_the_ID(), 'work_category');
+if ($terms && !is_wp_error($terms)) :
+  echo '<ul class="work-meta">';
+  foreach ($terms as $term) :
+    echo '<li class="meta-item"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+  endforeach;
+  echo '</ul>';
+endif;
+?>
+
   <!-- アイキャッチ + メタ情報カード -->
   <div class="work-hero">
     <div class="work-thumb">
@@ -121,6 +134,14 @@
     ?>
   </div>
 </section>
+
+<?php
+$terms = get_the_terms(get_the_ID(), 'work_category');
+if ($terms && !is_wp_error($terms)) :
+  $term = $terms[0]; // 最初のカテゴリーだけ
+  echo '<div class="work-category-link"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . ' カテゴリーの一覧へ →</a></div>';
+endif;
+?>
 
 </div>
 <?php get_footer(); ?>
