@@ -77,19 +77,33 @@ function fuji_output_ogp_tags() {
     $og_url = get_permalink($post->ID);
 
     // 本文から説明文を生成（120文字）
-    $content = strip_tags( get_the_content(null, false, $post->ID) );
-    $content = trim( preg_replace('/\s+/', ' ', $content) );
-    $og_description = mb_substr($content, 0, 120);
-    if (mb_strlen($content) > 120) $og_description .= '...';
+    if ( is_singular('works')){
+    	$lead  = get_field('work_overview', $post->ID);
+    	$desc  = $lead ?: wp_trim_words(strip_tags($post->post_content), 120);
+    	$og_description = $desc;
+    	
+    }
+    else {
+    	$content = strip_tags( get_the_content(null, false, $post->ID) );
+    	$content = trim( preg_replace('/\s+/', ' ', $content) );
+    	$og_description = mb_substr($content, 0, 120);
+    	if (mb_strlen($content) > 120) $og_description .= '...';
+    }
 
     // アイキャッチ or デフォルト
     if (has_post_thumbnail($post->ID)) {
-      $og_image = get_the_post_thumbnail_url($post->ID, 'large');
+      if ( is_singular('works') ){
+      	$og_image = get_the_post_thumbnail_url($post->ID, 'work-thumb');
+      }
+      else {
+      	$og_image = get_the_post_thumbnail_url($post->ID, 'large');
+      }
     } else {
       $og_image = get_template_directory_uri() . '/assets/img/ogp-default.png';
     }
 
-  } else {
+  }
+  else {
     // トップ・アーカイブ
     $og_title = get_bloginfo('name');
     $og_url = home_url();

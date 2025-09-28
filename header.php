@@ -3,7 +3,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?46">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?55">
 
 
 <script>
@@ -35,10 +35,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <?php if (is_singular()): ?>
   <meta name="description" content="<?php 
-    $content = strip_tags( get_the_content() );   // 本文からタグを除去
-    $content = trim( preg_replace('/\s+/', ' ', $content) ); // 改行や余分な空白を1つに
-    $description = mb_substr( $content, 0, 120 ); // 120文字でカット
-    echo esc_attr( $description . ( mb_strlen($content) > 120 ? '...' : '' ) );
+    if ( is_singular('works') ){
+        global $post;
+    	$lead  = get_field('work_overview', $post->ID);
+    	$desc  = $lead ?: wp_trim_words(strip_tags($post->post_content), 120);
+    	echo $desc;
+    }
+    else {
+    	$content = strip_tags( get_the_content() );   // 本文からタグを除去
+    	$content = trim( preg_replace('/\s+/', ' ', $content) ); // 改行や余分な空白を1つに
+    	$description = mb_substr( $content, 0, 120 ); // 120文字でカット
+    	echo esc_attr( $description . ( mb_strlen($content) > 120 ? '...' : '' ) );
+    }
   ?>">
 <?php elseif (is_home() || is_archive()): ?>
   <meta name="description" content="<?php bloginfo('description'); ?>">
