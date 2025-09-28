@@ -539,7 +539,8 @@ header.post-header {
   padding: 32px 0;
 }
 .work-header {
-  margin-bottom: 28px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .work-meta {
@@ -566,13 +567,14 @@ header.post-header {
 }
 
 .work-title {
-  font-size: 28px;
-  margin: 0;
+  font-size: 24px;
+  margin-bottom: 8px; /* タイトルとリード文の間に余白 */
 }
 .work-lead {
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--muted);
-  margin-top: 8px;
+  margin: 0;
 }
 
 .work-body {

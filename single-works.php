@@ -3,12 +3,16 @@
 
   <!-- タイトル & 概要 -->
   <header class="work-header">
-    <h1 class="work-title"><?php the_title(); ?></h1>
-    <?php if (function_exists('get_field') && get_field('work_overview')): ?>
-      <p class="work-lead"><?php echo esc_html(get_field('work_overview')); ?></p>
-    <?php endif; ?>
-  </header>
-
+  <h1 class="work-title"><?php the_title(); ?></h1>
+  
+  <?php if (function_exists('get_field') && get_field('work_overview')): ?>
+    <div class="work-lead-wrap">
+      <p class="work-lead">
+        <?php echo esc_html(get_field('work_overview')); ?>
+      </p>
+    </div>
+  <?php endif; ?>
+</header>
   <!-- アイキャッチ + メタ情報カード -->
   <div class="work-hero">
     <div class="work-thumb">
