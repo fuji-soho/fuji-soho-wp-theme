@@ -120,22 +120,38 @@
   </section>
   
   <section id="about" style="margin-top:28px">
-        <div class="two-col">
-          <div>
-            <h3 style="margin-top:0">About</h3>
-            <p style="color:var(--muted)">これまでの経歴、専門分野、稼働時間・対応形態をここに記載します。クライアントの声や年表を入れると安心感が上がります。</p>
-            <ul style="color:var(--muted);font-size:14px">
-              <li>SaaS スタートアップでプロダクト開発（フロント/バック）</li>
-              <li>PM / テックリード経験あり</li>
-              <li>中小企業の技術支援実績多数</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-top:0">料金の目安</h3>
-            <p style="color:var(--muted)">時間単価 / 日数 / 固定費など、案件により変動します。まずは相談ください（初回相談無料）。</p>
-          </div>
-        </div>
-      </section>
+  <div class="two-col">
+    <div>
+      <h3 style="margin-top:0">About</h3>
+      <p style="color:var(--muted)">
+        フリーランスとして、主に受託開発を中心に活動しています。<br>
+        これまで建築業界、ドラッグストア、学校法人（幼稚園〜大学）、メディア、ガス会社などのインフラ系、芸術イベント、保険会社など、多様な業界のシステム開発・運用を担当してきました。
+      </p>
+      <p style="color:var(--muted)">
+        技術面では、
+      </p>
+      <ul style="color:var(--muted);font-size:14px">
+        <li>PHP / Laravel を用いた Web アプリケーション開発</li>
+        <li>AWS 上でのサーバ構築・運用</li>
+        <li>Apache Cordova を利用したスマホアプリ開発（App Store 公開実績あり）</li>
+      </ul>
+      <p style="color:var(--muted)">
+        多様な業界での経験を活かし、<br>
+        ・企画から設計・実装・運用まで一貫した開発支援<br>
+        ・中小企業や団体に合わせた柔軟なシステム提案<br>
+        ・クリーンで保守性の高いコードと安心できる設計<br>
+        を提供しています。
+      </p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">稼働形態</h3>
+      <ul style="color:var(--muted);font-size:14px">
+        <li>リモート中心（都内近郊での打ち合わせも対応可）</li>
+        <li>初回相談は無料です。お気軽にご連絡ください。</li>
+      </ul>
+    </div>
+  </div>
+</section>
   
 </main>
 
