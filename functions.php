@@ -336,5 +336,6 @@ acf_add_local_field_group(array(
 
 endif;
 
-
+//タイトルの自動挿入
+add_theme_support( 'title-tag' );
 

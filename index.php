@@ -20,10 +20,7 @@
         <aside>
           <div class="profile-card">
             <div class="avatar" aria-hidden>
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="8" r="3" stroke="var(--primary)" stroke-width="1.5" />
-                <path d="M5 20c1.5-3 4.5-4 7-4s5.5 1 7 4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              <img src="<?php echo get_template_directory_uri() . '/assets/img/photo.png';?>" alt="Fujiのプロフィール写真">
             </div>
             <h3 style="margin:10px 0 0">Fuji (フジ)</h3>
             <p style="margin:6px 0;color:var(--muted);font-size:14px">フリーランスエンジニア / フルスタック</p>
@@ -134,6 +131,7 @@
         <li>PHP / Laravel を用いた Web アプリケーション開発</li>
         <li>AWS 上でのサーバ構築・運用</li>
         <li>Apache Cordova を利用したスマホアプリ開発（App Store 公開実績あり）</li>
+        <li><a href="https://github.com/fuji-soho/fuji-soho-wp-theme" target="_blank" style="color:var(--primary)">WordPress テーマの自作と GitHub 公開</a></li>
       </ul>
       <p style="color:var(--muted)">
         多様な業界での経験を活かし、<br>
