@@ -52,6 +52,17 @@ document.addEventListener('DOMContentLoaded', function () {
   <meta name="description" content="<?php bloginfo('description'); ?>">
 <?php endif; ?>
 
+<!-- Favicon / App Icons -->
+<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon-180x180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon-512x512.png">
+<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/manifest.json">
+<meta name="theme-color" content="#0f4c81">
+
+
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
