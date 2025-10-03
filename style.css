@@ -556,6 +556,30 @@ footer .recaptcha-note {
   line-height: 1.4;
 }
 
+.recaptcha-note a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+.recaptcha-note a:hover {
+  color: var(--primary);
+}
+
+.site-policy-link {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.site-policy-link a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.site-policy-link a:hover {
+  color: var(--primary);
+}
+
 /* 下段は左右に分ける */
 footer .footer-inner {
   width: 100%;

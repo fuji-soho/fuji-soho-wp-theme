@@ -3,8 +3,11 @@
   <div class="recaptcha-note" style="text-align:center; margin-bottom:12px">
     このサイトは reCAPTCHA によって保護されており、<br>
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a> と
-    <a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a> が適用されます。
+    <a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a> が適用されます。<br />
   </div>
+  <div class="site-policy-link">
+  <a href="<?php echo home_url('/privacy-policy'); ?>">当サイトのプライバシーポリシー</a>
+</div>
 
   <!-- 2行目: 左にロゴ＋著作権、右に Made with care -->
   <div class="footer-inner">

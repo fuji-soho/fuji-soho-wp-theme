@@ -129,6 +129,28 @@ function fuji_output_ogp_tags() {
 }
 add_action('wp_head', 'fuji_output_ogp_tags');
 
+//プライバシーページのOGP
+function fuji_soho_add_privacy_policy_ogp() {
+  if (is_page('privacy-policy')) {
+    ?>
+    <!-- OGP for Privacy Policy -->
+    <meta property="og:title" content="プライバシーポリシー | fuji-soho" />
+    <meta property="og:description" content="fuji-soho のプライバシーポリシーページです。個人情報の取り扱いについてご説明します。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>" />
+    <meta property="og:site_name" content="fuji-soho" />
+    <meta property="og:image" content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/ogp-default.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="プライバシーポリシー | fuji-soho" />
+    <meta name="twitter:description" content="fuji-soho のプライバシーポリシーページです。個人情報の取り扱いについてご説明します。" />
+    <meta name="twitter:image" content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/ogp-default.png" />
+    <?php
+  }
+}
+add_action('wp_head', 'fuji_soho_add_privacy_policy_ogp');
+
 // パンくずリスト出力関数
 function fuji_breadcrumb() {
   global $post;
