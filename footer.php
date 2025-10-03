@@ -7,6 +7,7 @@
   </div>
   <div class="site-policy-link">
   <a href="<?php echo home_url('/privacy-policy'); ?>">当サイトのプライバシーポリシー</a>
+  <a style="margin-left:15px;" href="<?php echo home_url('/disclaimer'); ?>">免責事項</a>
 </div>
 
   <!-- 2行目: 左にロゴ＋著作権、右に Made with care -->
@@ -14,10 +15,12 @@
     <!-- 左側 -->
     <div class="footer-left" >
       <div style="width:44px;height:44px">
+        <a href="/">
         <svg viewBox="0 0 120 120" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
           <circle cx="60" cy="60" r="56" stroke="var(--primary)" stroke-width="4" fill="white"></circle>
           <path d="M18 82 L60 28 L102 82 Z" fill="var(--primary)"></path>
         </svg>
+        </a>
       </div>
       <div>
         <div style="font-weight:600"><?php bloginfo('name'); ?></div>
