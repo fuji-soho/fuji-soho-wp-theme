@@ -27,6 +27,14 @@
     <?php the_category(', '); ?>
   </div>
 
+  <!-- ▼ タイトル下にタグを追加 -->
+  <?php if ( get_the_tags() ) : ?>
+      <div class="post-tags post-tags--top">
+        <?php the_tags( '', ' ', '' ); ?>
+      </div>
+  <?php endif; ?>
+  <!-- ▲ ここまで -->
+
   <!-- 本文 -->
   <div class="content">
     <?php the_content(); ?>
@@ -39,6 +47,14 @@
     <li><a href="#" class="btn-l"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a></li>
     <li><a href="#" class="btn-h"><i class="fa-solid fa-bookmark"></i> はてブ</a></li>
   </ul>
+
+  <!-- ▼ 本文後にタグを追加 -->
+  <?php if ( get_the_tags() ) : ?>
+      <div class="post-tags post-tags--bottom">
+          <?php the_tags( '', ' ', '' ); ?>
+      </div>
+  <?php endif; ?>
+  <!-- ▲ ここまで -->
 
 
   <!-- 前後記事ナビ -->

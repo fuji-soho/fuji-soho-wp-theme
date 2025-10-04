@@ -1056,5 +1056,33 @@ footer .footer-inner {
   color: var(--muted);
 }
 
+//tag
+.post-tags {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 14px;
+}
+.post-tags .tag-title {
+  margin-right: 6px;
+  color: var(--muted);
+}
+.post-tags a {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 13px;
+}
+.post-tags a:hover {
+  background: var(--primary);
+  color: #fff;
+}
 
+.post-tags--bottom{
+  margin-top: 24px;
+}
 
