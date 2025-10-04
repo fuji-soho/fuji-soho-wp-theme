@@ -315,6 +315,7 @@ acf_add_local_field_group(array(
             'name' => 'work_scope',
             'type' => 'checkbox',
             'choices' => array(
+                'requirements' => '要件定義',
                 'frontend' => 'フロントエンド',
                 'backend' => 'バックエンド',
                 'infra' => 'インフラ',
@@ -339,6 +340,9 @@ acf_add_local_field_group(array(
                 'aws' => 'AWS',
                 'gcp' => 'GCP',
                 'docker' => 'Docker',
+                'mysql' => 'Mysql/MariaDB',
+                'apache' => 'Apache',
+                'git' => 'Git',
                 'other' => 'その他',
             ),
             'layout' => 'vertical',

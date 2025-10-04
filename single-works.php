@@ -9,7 +9,7 @@
   <?php if (function_exists('get_field') && get_field('work_overview')): ?>
     <div class="work-lead-wrap">
       <p class="work-lead">
-        <?php echo esc_html(get_field('work_overview')); ?>
+        <?php echo nl2br(get_field('work_overview')); ?>
       </p>
     </div>
   <?php endif; ?>
@@ -47,10 +47,14 @@ endif;
       <?php if (function_exists('get_field') && get_field('work_scope')): ?>
       <div class="info-card">
         <h3>担当範囲</h3>
-        <ul>
-          <?php foreach (get_field('work_scope') as $scope): ?>
-            <li><?php echo esc_html($scope); ?></li>
-          <?php endforeach; ?>
+        <ul class="badge-list-vertical">
+        <?php 
+            $field = get_field_object('work_scope'); // フィールド定義を取得
+            $values = get_field('work_scope');       // 選択された値（キー配列）
+            foreach ($values as $value): 
+                echo '<li class="badge">' . esc_html($field['choices'][$value]) . '</li>';
+            endforeach;
+        ?>
         </ul>
       </div>
       <?php endif; ?>
@@ -58,10 +62,14 @@ endif;
       <?php if (function_exists('get_field') && get_field('work_tech')): ?>
       <div class="info-card">
         <h3>使用技術</h3>
-        <ul>
-          <?php foreach (get_field('work_tech') as $tech): ?>
-            <li><?php echo esc_html($tech); ?></li>
-          <?php endforeach; ?>
+        <ul class="badge-list-vertical">
+          <?php 
+            $field = get_field_object('work_tech'); // フィールド定義を取得
+            $values = get_field('work_tech');       // 選択された値（キー配列）
+            foreach ($values as $value): 
+                echo '<li class="badge">' . esc_html($field['choices'][$value]) . '</li>';
+            endforeach;
+        ?>
         </ul>
       </div>
       <?php endif; ?>
