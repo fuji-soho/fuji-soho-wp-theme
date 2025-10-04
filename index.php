@@ -115,7 +115,9 @@
             <div class="excerpt"><?php the_excerpt(); ?></div>
           </article>
       <?php endwhile; wp_reset_postdata(); else: ?>
-        <p>制作実績はまだありません。</p>
+        <?php if ( $pickup_query->have_posts() == false && $normal_query->have_posts() == false ): ?>
+            <p>制作実績はまだありません。</p>
+        <?php endif; ?>
       <?php endif; ?>
     </div>
 
