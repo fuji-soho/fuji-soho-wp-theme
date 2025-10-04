@@ -348,6 +348,18 @@ acf_add_local_field_group(array(
             'layout' => 'vertical',
             'allow_custom' => 1, // ユーザーが自由に追加可
         ),
+        
+        array(
+            'key' => 'field_work_pickup',
+            'label' => 'ピックアップ',
+            'name' => 'pickup',
+            'type' => 'true_false',
+            'instructions' => 'トップページや一覧で優先的に表示する場合はチェックしてください',
+            'message' => 'トップに固定表示する',
+            'default_value' => 0,
+            'ui' => 1, // チェックボックスをトグル風に
+        ),
+        
     ),
     'location' => array(
         array(

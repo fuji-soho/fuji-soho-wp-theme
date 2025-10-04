@@ -54,36 +54,74 @@
 
   <!-- 制作実績セクション -->
   <section id="works">
-    <div class="works">
-      <h2>制作実績</h2>
-      <div class="works-grid">
-        <?php
-        $works_query = new WP_Query(array(
-          'post_type' => 'works',
-          'posts_per_page' => 6
-        ));
-        if ($works_query->have_posts()):
-          while ($works_query->have_posts()): $works_query->the_post(); ?>
-            <article class="work">
-              <a href="<?php the_permalink(); ?>">
-                <?php if (has_post_thumbnail()): ?>
-                  <?php the_post_thumbnail('medium'); ?>
-                <?php else: ?>
-                  <div style="height:140px;background:var(--card)"></div>
-                <?php endif; ?>
-                <h4><?php the_title(); ?></h4>
-              </a>
-              <div class="excerpt">
-                  <?php the_excerpt(); ?>
-              </div>
-            </article>
-        <?php endwhile; wp_reset_postdata(); else: ?>
-          <p>制作実績はまだありません。</p>
-        <?php endif; ?>
-      </div>
-      <p><a href="<?php echo get_post_type_archive_link('works'); ?>">すべての制作実績を見る →</a></p>
+  <div class="works">
+    <h2>制作実績</h2>
+
+    <div class="works-grid">
+      <?php
+      // ▼ ピックアップ案件（1〜2件）
+      $pickup_query = new WP_Query(array(
+        'post_type'      => 'works',
+        'posts_per_page' => 2,
+        'meta_key'       => 'pickup',
+        'meta_value'     => 1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+      ));
+
+      if ($pickup_query->have_posts()):
+        while ($pickup_query->have_posts()): $pickup_query->the_post(); ?>
+          <article class="work pickup">
+            <a href="<?php the_permalink(); ?>">
+              <?php if (has_post_thumbnail()): ?>
+                <?php the_post_thumbnail('medium'); ?>
+              <?php else: ?>
+                <div style="height:140px;background:var(--card)"></div>
+              <?php endif; ?>
+              <h4><?php the_title(); ?></h4>
+            </a>
+            <div class="excerpt"><?php the_excerpt(); ?></div>
+          </article>
+      <?php endwhile; wp_reset_postdata(); endif; ?>
+
+
+      <?php
+      // ▼ 通常案件（ピックアップ以外）
+      $normal_query = new WP_Query(array(
+        'post_type'      => 'works',
+        'posts_per_page' => 4,
+        'meta_query'     => array(
+          array(
+            'key'     => 'pickup',
+            'value'   => 1,
+            'compare' => '!=', // pickupが1でないもの
+          ),
+        ),
+        'orderby' => 'date',
+        'order'   => 'DESC',
+      ));
+
+      if ($normal_query->have_posts()):
+        while ($normal_query->have_posts()): $normal_query->the_post(); ?>
+          <article class="work">
+            <a href="<?php the_permalink(); ?>">
+              <?php if (has_post_thumbnail()): ?>
+                <?php the_post_thumbnail('medium'); ?>
+              <?php else: ?>
+                <div style="height:140px;background:var(--card)"></div>
+              <?php endif; ?>
+              <h4><?php the_title(); ?></h4>
+            </a>
+            <div class="excerpt"><?php the_excerpt(); ?></div>
+          </article>
+      <?php endwhile; wp_reset_postdata(); else: ?>
+        <p>制作実績はまだありません。</p>
+      <?php endif; ?>
     </div>
-  </section>
+
+    <p><a href="<?php echo get_post_type_archive_link('works'); ?>">すべての制作実績を見る →</a></p>
+  </div>
+</section>
 
   <!-- ブログ記事セクション -->
   <section id="blog" style="margin-top:40px">

@@ -1104,3 +1104,9 @@ footer .footer-inner {
   margin-top: 24px;
 }
 
+//トップページのピックアップ
+.work.pickup {
+  border: 2px solid var(--primary);
+  background: #f0f6fb;
+}
+
