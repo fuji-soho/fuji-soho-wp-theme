@@ -385,3 +385,102 @@ endif;
 //タイトルの自動挿入
 add_theme_support( 'title-tag' );
 
+// ミミの冒険 固定ページの言語判定
+function fuji_mimis_adventure_get_page_language( $post = null ) {
+  $post = get_post( $post );
+
+  if ( ! $post instanceof WP_Post ) {
+    return 'ja';
+  }
+
+  $page_uri = trim( get_page_uri( $post ), '/' );
+
+  if ( 'mimis-adventure/en' === $page_uri || 0 === strpos( $page_uri, 'mimis-adventure/en/' ) ) {
+    return 'en';
+  }
+
+  return 'ja';
+}
+
+function fuji_mimis_adventure_is_english_page( $post = null ) {
+  return 'en' === fuji_mimis_adventure_get_page_language( $post );
+}
+
+function fuji_mimis_adventure_get_language_page_path( $post = null, $target_language = 'ja' ) {
+  $post = get_post( $post );
+
+  if ( ! $post instanceof WP_Post ) {
+    return 'en' === $target_language ? 'mimis-adventure/en' : 'mimis-adventure';
+  }
+
+  $page_uri = trim( get_page_uri( $post ), '/' );
+
+  if ( 'en' === $target_language ) {
+    if ( fuji_mimis_adventure_is_english_page( $post ) ) {
+      return $page_uri;
+    }
+
+    return trim( preg_replace( '#^mimis-adventure/?#', 'mimis-adventure/en/', $page_uri ), '/' );
+  }
+
+  if ( fuji_mimis_adventure_is_english_page( $post ) ) {
+    return trim( preg_replace( '#^mimis-adventure/en/?#', 'mimis-adventure/', $page_uri ), '/' );
+  }
+
+  return $page_uri;
+}
+
+function fuji_mimis_adventure_get_modified_date_text( $post = null ) {
+  $post = get_post( $post );
+
+  if ( ! $post instanceof WP_Post ) {
+    return '';
+  }
+
+  if ( fuji_mimis_adventure_is_english_page( $post ) ) {
+    $timestamp = get_post_modified_time( 'U', false, $post );
+    $date      = new DateTimeImmutable( '@' . $timestamp );
+    $date      = $date->setTimezone( wp_timezone() );
+
+    return 'Last updated: ' . $date->format( 'F j, Y' );
+  }
+
+  return '最終更新日：' . get_the_modified_date( 'Y年n月j日', $post );
+}
+
+function fuji_mimis_adventure_language_attributes( $output, $doctype = 'html' ) {
+  if ( is_admin() || ! is_page_template( 'template-mimis-adventure.php' ) || ! fuji_mimis_adventure_is_english_page() ) {
+    return $output;
+  }
+
+  if ( preg_match( '/\blang=(["\']).*?\1/', $output ) ) {
+    $output = preg_replace( '/\blang=(["\']).*?\1/', 'lang="en"', $output, 1 );
+  } else {
+    $output .= ' lang="en"';
+  }
+
+  if ( 'xhtml' === $doctype ) {
+    if ( preg_match( '/\bxml:lang=(["\']).*?\1/', $output ) ) {
+      $output = preg_replace( '/\bxml:lang=(["\']).*?\1/', 'xml:lang="en"', $output, 1 );
+    } else {
+      $output .= ' xml:lang="en"';
+    }
+  }
+
+  return $output;
+}
+add_filter( 'language_attributes', 'fuji_mimis_adventure_language_attributes', 10, 2 );
+
+// ミミの冒険 固定ページテンプレート専用CSS
+function fuji_enqueue_mimis_adventure_assets() {
+  if ( is_page_template( 'template-mimis-adventure.php' ) ) {
+    wp_enqueue_style(
+      'fuji-mimis-adventure',
+      get_template_directory_uri() . '/assets/css/mimis-adventure.css',
+      array(),
+      filemtime( get_template_directory() . '/assets/css/mimis-adventure.css' )
+    );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'fuji_enqueue_mimis_adventure_assets' );
+

@@ -1,0 +1,547 @@
+.app-page--mimis-adventure {
+	--mimi-background: #FFF8ED;
+	--mimi-card: #FFFFFF;
+	--mimi-primary: #9D3B3B;
+	--mimi-heading: #51352D;
+	--mimi-accent: #D5A33F;
+	--mimi-text: #333333;
+	--mimi-border: #E8D3C5;
+	--mimi-muted: #73584E;
+	--mimi-focus: rgba(157, 59, 59, 0.28);
+
+	background: var(--mimi-background);
+	border-radius: 18px;
+	color: var(--mimi-text);
+	font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+	margin: 28px 0 0;
+	overflow-x: clip;
+	padding: 24px;
+}
+
+.app-page--mimis-adventure a {
+	color: var(--mimi-primary);
+}
+
+.app-page--mimis-adventure a:hover {
+	color: var(--mimi-heading);
+}
+
+.app-page--mimis-adventure a:focus-visible,
+.app-page--mimis-adventure button:focus-visible {
+	outline: 3px solid var(--mimi-focus);
+	outline-offset: 3px;
+}
+
+.app-page--mimis-adventure .mimi-app-header {
+	align-items: center;
+	background: linear-gradient(135deg, #FFF4DC 0%, #FFEAEF 100%);
+	border: 1px solid var(--mimi-border);
+	border-radius: 18px;
+	box-shadow: 0 10px 28px rgba(81, 53, 45, 0.08);
+	display: grid;
+	gap: 24px;
+	grid-template-columns: minmax(0, 1fr) auto;
+	overflow: hidden;
+	padding: 30px clamp(22px, 4vw, 42px);
+	position: relative;
+}
+
+.app-page--mimis-adventure .mimi-app-header::before {
+	background: var(--mimi-accent);
+	border-radius: 999px;
+	content: "";
+	height: 4px;
+	left: clamp(22px, 4vw, 42px);
+	position: absolute;
+	top: 0;
+	width: 96px;
+}
+
+.app-page--mimis-adventure .mimi-app-header__content {
+	min-width: 0;
+}
+
+.app-page--mimis-adventure .mimi-app-header__identity {
+	align-items: center;
+	display: flex;
+	gap: 16px;
+	min-width: 0;
+}
+
+.app-page--mimis-adventure .mimi-app-header__icon {
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	border-radius: 22%;
+	box-shadow: 0 8px 18px rgba(81, 53, 45, 0.12);
+	display: block;
+	flex: 0 0 auto;
+	height: clamp(64px, 8vw, 86px);
+	object-fit: cover;
+	width: clamp(64px, 8vw, 86px);
+}
+
+.app-page--mimis-adventure .mimi-app-header__copy {
+	min-width: 0;
+}
+
+.app-page--mimis-adventure .mimi-app-header__eyebrow {
+	color: var(--mimi-primary);
+	font-size: 0.82rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	margin: 0 0 10px;
+}
+
+.app-page--mimis-adventure .mimi-app-header__title-ja {
+	color: var(--mimi-heading);
+	font-size: clamp(1.55rem, 3vw, 2.35rem);
+	font-weight: 500;
+	line-height: 1.35;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.app-page--mimis-adventure .mimi-app-header__title-ja-sub {
+	margin-left: 0.35em;
+}
+
+.app-page--mimis-adventure .mimi-app-header__title-en {
+	color: var(--mimi-muted);
+	font-size: clamp(0.96rem, 1.6vw, 1.12rem);
+	font-weight: 400;
+	line-height: 1.55;
+	margin-top: 8px;
+	overflow-wrap: anywhere;
+}
+
+.app-page--mimis-adventure .mimi-app-header__title-main {
+	color: var(--mimi-heading);
+	font-size: clamp(1.55rem, 3vw, 2.35rem);
+	font-weight: 500;
+	line-height: 1.35;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.app-page--mimis-adventure .mimi-app-header__title-main.mimi-app-header__title-en {
+	font-size: clamp(1.48rem, 2.8vw, 2.2rem);
+	line-height: 1.28;
+	overflow-wrap: normal;
+	word-break: normal;
+}
+
+.app-page--mimis-adventure .mimi-app-header__title-secondary {
+	color: var(--mimi-muted);
+	font-size: clamp(0.96rem, 1.6vw, 1.12rem);
+	font-weight: 400;
+	line-height: 1.55;
+	margin-top: 8px;
+	overflow-wrap: anywhere;
+}
+
+.app-page--mimis-adventure .mimi-app-header__character {
+	align-self: end;
+	display: flex;
+	justify-content: flex-end;
+	min-width: 120px;
+}
+
+.app-page--mimis-adventure .mimi-app-header__character img {
+	display: block;
+	height: clamp(180px, 18vw, 220px);
+	max-width: 220px;
+	object-fit: contain;
+	width: auto;
+}
+
+.app-page--mimis-adventure .mimi-language-switcher {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 18px;
+}
+
+.app-page--mimis-adventure .mimi-language-switcher__item {
+	align-items: center;
+	background: rgba(255, 255, 255, 0.78);
+	border: 1px solid var(--mimi-border);
+	border-radius: 999px;
+	color: var(--mimi-primary);
+	display: inline-flex;
+	font-size: 0.92rem;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-left: 0;
+	min-height: 40px;
+	padding: 9px 14px;
+	text-decoration: none;
+}
+
+.app-page--mimis-adventure .mimi-language-switcher__item.is-current {
+	background: var(--mimi-primary);
+	border-color: var(--mimi-primary);
+	color: #FFFFFF;
+}
+
+.app-page--mimis-adventure .mimi-language-switcher__item.is-disabled {
+	color: #8A756D;
+	cursor: default;
+	opacity: 0.72;
+}
+
+.app-page--mimis-adventure .mimi-app-navigation {
+	display: block;
+	margin: 18px 0 0;
+}
+
+.app-page--mimis-adventure .mimi-app-navigation__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.app-page--mimis-adventure .mimi-app-navigation__link {
+	align-items: center;
+	background: var(--mimi-card);
+	border: 1px solid var(--mimi-border);
+	border-radius: 999px;
+	color: var(--mimi-primary);
+	display: inline-flex;
+	font-size: 0.95rem;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-left: 0;
+	min-height: 44px;
+	padding: 10px 16px;
+	text-decoration: none;
+}
+
+.app-page--mimis-adventure .mimi-app-navigation__link.is-current {
+	background: #F9E4E4;
+	border-color: var(--mimi-primary);
+	color: var(--mimi-heading);
+}
+
+.app-page--mimis-adventure .mimi-page-shell {
+	margin: 34px auto 0;
+	max-width: 860px;
+}
+
+.app-page--mimis-adventure .mimi-page-heading {
+	display: block;
+	margin-bottom: 18px;
+}
+
+.app-page--mimis-adventure .mimi-page-title {
+	border-bottom: 2px solid var(--mimi-accent);
+	color: var(--mimi-heading);
+	font-size: clamp(1.55rem, 3vw, 2rem);
+	font-weight: 500;
+	line-height: 1.35;
+	margin: 0;
+	overflow-wrap: anywhere;
+	padding-bottom: 10px;
+}
+
+.app-page--mimis-adventure .mimi-page-meta {
+	color: var(--mimi-muted);
+	font-size: 0.92rem;
+	line-height: 1.6;
+	margin-top: 10px;
+}
+
+.app-page--mimis-adventure .mimi-content-card {
+	background: var(--mimi-card);
+	border: 1px solid var(--mimi-border);
+	border-radius: 14px;
+	box-shadow: 0 12px 28px rgba(81, 53, 45, 0.07);
+	font-size: 1rem;
+	line-height: 1.85;
+	overflow-wrap: anywhere;
+	padding: clamp(22px, 4vw, 42px);
+}
+
+.app-page--mimis-adventure .mimi-content-card > :first-child {
+	margin-top: 0;
+}
+
+.app-page--mimis-adventure .mimi-content-card > :last-child {
+	margin-bottom: 0;
+}
+
+.app-page--mimis-adventure .mimi-content-card h2,
+.app-page--mimis-adventure .mimi-content-card h3 {
+	color: var(--mimi-heading);
+	font-weight: 500;
+	line-height: 1.45;
+	margin: 1.8em 0 0.65em;
+}
+
+.app-page--mimis-adventure .mimi-content-card h2 {
+	border-left: 4px solid var(--mimi-accent);
+	font-size: 1.38rem;
+	padding-left: 12px;
+}
+
+.app-page--mimis-adventure .mimi-content-card h3 {
+	font-size: 1.14rem;
+}
+
+.app-page--mimis-adventure .mimi-content-card p,
+.app-page--mimis-adventure .mimi-content-card ul,
+.app-page--mimis-adventure .mimi-content-card ol {
+	margin: 0 0 1.15em;
+}
+
+.app-page--mimis-adventure .mimi-content-card ul,
+.app-page--mimis-adventure .mimi-content-card ol {
+	padding-left: 1.4em;
+}
+
+.app-page--mimis-adventure .mimi-content-card li + li {
+	margin-top: 0.35em;
+}
+
+.app-page--mimis-adventure .mimi-content-card a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+.app-page--mimis-adventure .mimi-content-card table {
+	border-collapse: collapse;
+	display: block;
+	margin: 1.4em 0;
+	max-width: 100%;
+	overflow-x: auto;
+	width: 100%;
+}
+
+.app-page--mimis-adventure .mimi-content-card th,
+.app-page--mimis-adventure .mimi-content-card td {
+	border: 1px solid var(--mimi-border);
+	padding: 10px 12px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.app-page--mimis-adventure .mimi-content-card th {
+	background: #FFF4DC;
+	color: var(--mimi-heading);
+	font-weight: 500;
+}
+
+.app-page--mimis-adventure .mimi-content-card img,
+.app-page--mimis-adventure .mimi-content-card iframe {
+	height: auto;
+	max-width: 100%;
+}
+
+@media (max-width: 760px) {
+	.app-page--mimis-adventure {
+		border-radius: 14px;
+		margin-top: 14px;
+		padding: 14px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header {
+		display: block;
+		grid-template-columns: 1fr;
+		min-height: 0;
+		padding: 18px 16px 22px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__identity {
+		align-items: center;
+		display: grid;
+		gap: 0 10px;
+		grid-template-columns: 56px minmax(0, 1fr);
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__icon {
+		grid-column: 1;
+		grid-row: 1;
+		height: 56px;
+		width: 56px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__copy {
+		display: contents;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__eyebrow {
+		align-self: center;
+		font-size: 0.78rem;
+		grid-column: 2;
+		grid-row: 1;
+		margin-bottom: 0;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-main {
+		font-size: clamp(1.38rem, 7vw, 1.72rem);
+		grid-column: 1 / -1;
+		grid-row: 2;
+		line-height: 1.28;
+		margin-top: 10px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-ja-main,
+	.app-page--mimis-adventure .mimi-app-header__title-ja-sub,
+	.app-page--mimis-adventure .mimi-app-header__title-en-main,
+	.app-page--mimis-adventure .mimi-app-header__title-en-sub {
+		display: block;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-ja-sub {
+		margin-left: 0;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-main.mimi-app-header__title-en {
+		font-size: clamp(1.2rem, 6vw, 1.5rem);
+		line-height: 1.35;
+		max-width: calc(100% - 86px);
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-secondary {
+		font-size: 0.94rem;
+		grid-column: 1 / -1;
+		grid-row: 3;
+		line-height: 1.45;
+		margin-top: 6px;
+		max-width: calc(100% - 86px);
+		overflow-wrap: normal;
+		word-break: normal;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__character {
+		bottom: 14px;
+		min-width: 0;
+		position: absolute;
+		right: 14px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__character img {
+		height: clamp(106px, 25vw, 110px);
+		max-width: 86px;
+	}
+
+	.app-page--mimis-adventure .mimi-language-switcher {
+		gap: 6px;
+		margin-top: 12px;
+		max-width: calc(100% - 94px);
+	}
+
+	.app-page--mimis-adventure .mimi-language-switcher__item {
+		flex: 1 1 70px;
+		font-size: 0.88rem;
+		justify-content: center;
+		min-height: 44px;
+		padding: 9px 10px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-navigation {
+		margin-top: 12px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-navigation__list {
+		gap: 8px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-navigation__item {
+		flex: 1 1 140px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-navigation__link {
+		justify-content: center;
+		min-height: 46px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.app-page--mimis-adventure .mimi-page-shell {
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.app-page--mimis-adventure {
+		margin-left: -18px;
+		margin-right: -18px;
+		padding: 14px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-navigation__item {
+		flex: 1 1 calc(50% - 4px);
+	}
+
+	.app-page--mimis-adventure .mimi-app-navigation__link {
+		min-height: 58px;
+	}
+
+	.app-page--mimis-adventure .mimi-page-heading {
+		margin-bottom: 14px;
+	}
+
+	.app-page--mimis-adventure .mimi-page-title {
+		font-size: 1.45rem;
+		padding-bottom: 8px;
+	}
+
+	.app-page--mimis-adventure .mimi-page-meta {
+		font-size: 0.88rem;
+		margin-top: 8px;
+	}
+
+	.app-page--mimis-adventure .mimi-content-card {
+		border-radius: 12px;
+		line-height: 1.78;
+		padding: 20px 16px;
+	}
+}
+
+@media (max-width: 340px) {
+	.app-page--mimis-adventure .mimi-app-header {
+		padding: 16px 14px 20px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__icon {
+		height: 52px;
+		width: 52px;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__identity {
+		grid-template-columns: 52px minmax(0, 1fr);
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-main {
+		font-size: 1.34rem;
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-main.mimi-app-header__title-en {
+		font-size: 1.14rem;
+		max-width: calc(100% - 76px);
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__title-secondary {
+		font-size: 0.9rem;
+		max-width: calc(100% - 76px);
+	}
+
+	.app-page--mimis-adventure .mimi-app-header__character img {
+		height: 106px;
+		max-width: 78px;
+	}
+
+	.app-page--mimis-adventure .mimi-language-switcher {
+		max-width: calc(100% - 80px);
+	}
+
+	.app-page--mimis-adventure .mimi-language-switcher__item {
+		font-size: 0.82rem;
+		flex-basis: 58px;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+}
