@@ -27,6 +27,11 @@ $mimi_nav_items = array(
 		'paths' => array( 'mimis-adventure/support', 'mimis-adventure/en/support' ),
 	),
 	array(
+		'label_ja' => __( 'お問い合わせ', 'fuji-soho-wp-theme' ),
+		'label_en' => __( 'Contact', 'fuji-soho-wp-theme' ),
+		'paths' => array( 'mimis-adventure/contact', 'mimis-adventure/en/contact' ),
+	),
+	array(
 		'label_ja' => __( 'ライセンス', 'fuji-soho-wp-theme' ),
 		'label_en' => __( 'Licenses', 'fuji-soho-wp-theme' ),
 		'paths' => array( 'mimis-adventure/licenses', 'mimis-adventure/en/licenses' ),
