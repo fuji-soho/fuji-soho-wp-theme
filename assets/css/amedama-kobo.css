@@ -1,3 +1,11 @@
+@font-face {
+	font-display: swap;
+	font-family: "Harenosora Mincho";
+	font-style: normal;
+	font-weight: 400 700;
+	src: url("../fonts/amedama-kobo/Harenosora.otf") format("opentype");
+}
+
 .app-page--amedama-kobo {
 	--amedama-background: #F4F1E8;
 	--amedama-card: #F7F6F1;
