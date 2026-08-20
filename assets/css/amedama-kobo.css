@@ -169,6 +169,8 @@
 }
 
 .app-page--amedama-kobo .amedama-page-heading {
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 18px;
 }
 
@@ -182,13 +184,16 @@
 	margin: 0;
 	overflow-wrap: anywhere;
 	padding-bottom: 10px;
+	width: 100%;
 }
 
 .app-page--amedama-kobo .amedama-page-meta {
+	align-self: flex-end;
 	color: var(--amedama-muted);
 	font-size: 0.92rem;
 	line-height: 1.7;
 	margin-top: 10px;
+	text-align: right;
 }
 
 .app-page--amedama-kobo .amedama-content-card {
