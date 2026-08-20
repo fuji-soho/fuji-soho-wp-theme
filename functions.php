@@ -484,3 +484,15 @@ function fuji_enqueue_mimis_adventure_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'fuji_enqueue_mimis_adventure_assets' );
 
+// 飴玉工房 固定ページテンプレート専用CSS
+function fuji_enqueue_amedama_kobo_assets() {
+  if ( is_page_template( 'template-amedama-kobo.php' ) ) {
+    wp_enqueue_style(
+      'fuji-amedama-kobo',
+      get_template_directory_uri() . '/assets/css/amedama-kobo.css',
+      array(),
+      filemtime( get_template_directory() . '/assets/css/amedama-kobo.css' )
+    );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'fuji_enqueue_amedama_kobo_assets' );

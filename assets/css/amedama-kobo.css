@@ -1,0 +1,369 @@
+.app-page--amedama-kobo {
+	--amedama-background: #F4F1E8;
+	--amedama-card: #F7F6F1;
+	--amedama-text: #343A38;
+	--amedama-muted: #8F8D87;
+	--amedama-red: #BE625E;
+	--amedama-blue: #527F8F;
+	--amedama-green: #657F5C;
+	--amedama-beige: #B9B09D;
+	--amedama-candy: #C99D3F;
+	--amedama-border: #D8D7D0;
+	--amedama-focus: rgba(190, 98, 94, 0.3);
+	--amedama-font: "Harenosora Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+
+	background: var(--amedama-background);
+	border: 1px solid var(--amedama-border);
+	border-radius: 16px;
+	color: var(--amedama-text);
+	font-family: var(--amedama-font);
+	margin: 28px 0 0;
+	overflow-x: clip;
+	padding: 22px;
+}
+
+.app-page--amedama-kobo a {
+	color: var(--amedama-blue);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+.app-page--amedama-kobo a:hover {
+	color: var(--amedama-red);
+}
+
+.app-page--amedama-kobo a:focus-visible,
+.app-page--amedama-kobo button:focus-visible {
+	outline: 3px solid var(--amedama-focus);
+	outline-offset: 3px;
+}
+
+.app-page--amedama-kobo .breadcrumb {
+	margin: 0 0 18px;
+}
+
+.app-page--amedama-kobo .amedama-app-header {
+	background:
+		linear-gradient(90deg, rgba(201, 157, 63, 0.16), rgba(82, 127, 143, 0.08)),
+		var(--amedama-card);
+	border: 1px solid var(--amedama-border);
+	border-radius: 14px;
+	box-shadow: 0 10px 24px rgba(52, 58, 56, 0.06);
+	overflow: hidden;
+	padding: clamp(22px, 4vw, 36px);
+	position: relative;
+}
+
+.app-page--amedama-kobo .amedama-app-header::before {
+	background: var(--amedama-candy);
+	content: "";
+	height: 4px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.app-page--amedama-kobo .amedama-app-header__content {
+	align-items: center;
+	display: flex;
+	gap: 18px;
+	min-width: 0;
+}
+
+.app-page--amedama-kobo .amedama-app-header__mark {
+	align-items: center;
+	background: rgba(247, 246, 241, 0.78);
+	border: 1px solid var(--amedama-border);
+	border-radius: 999px;
+	display: inline-flex;
+	flex: 0 0 auto;
+	gap: 5px;
+	padding: 10px;
+}
+
+.app-page--amedama-kobo .amedama-app-header__mark-dot {
+	border: 1px solid rgba(52, 58, 56, 0.1);
+	border-radius: 50%;
+	display: block;
+	height: 16px;
+	width: 16px;
+}
+
+.app-page--amedama-kobo .amedama-app-header__mark-dot--red {
+	background: var(--amedama-red);
+}
+
+.app-page--amedama-kobo .amedama-app-header__mark-dot--blue {
+	background: var(--amedama-blue);
+}
+
+.app-page--amedama-kobo .amedama-app-header__mark-dot--green {
+	background: var(--amedama-green);
+}
+
+.app-page--amedama-kobo .amedama-app-header__copy {
+	min-width: 0;
+}
+
+.app-page--amedama-kobo .amedama-app-header__title {
+	color: var(--amedama-text);
+	font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+	font-weight: 600;
+	letter-spacing: 0;
+	line-height: 1.35;
+	overflow-wrap: anywhere;
+}
+
+.app-page--amedama-kobo .amedama-app-navigation {
+	margin: 16px 0 0;
+}
+
+.app-page--amedama-kobo .amedama-app-navigation__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.app-page--amedama-kobo .amedama-app-navigation__item {
+	margin: 0;
+}
+
+.app-page--amedama-kobo .amedama-app-navigation__link {
+	align-items: center;
+	background: var(--amedama-card);
+	border: 1px solid var(--amedama-border);
+	border-radius: 999px;
+	color: var(--amedama-text);
+	display: inline-flex;
+	font-size: 0.98rem;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1.25;
+	min-height: 44px;
+	padding: 10px 16px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.app-page--amedama-kobo .amedama-app-navigation__link.is-current {
+	background: rgba(201, 157, 63, 0.16);
+	border-color: var(--amedama-candy);
+	color: var(--amedama-text);
+}
+
+.app-page--amedama-kobo .amedama-page-shell {
+	margin: 34px auto 0;
+	max-width: 860px;
+}
+
+.app-page--amedama-kobo .amedama-page-heading {
+	margin-bottom: 18px;
+}
+
+.app-page--amedama-kobo .amedama-page-title {
+	border-bottom: 2px solid var(--amedama-candy);
+	color: var(--amedama-text);
+	font-size: clamp(1.55rem, 3vw, 2rem);
+	font-weight: 600;
+	letter-spacing: 0;
+	line-height: 1.45;
+	margin: 0;
+	overflow-wrap: anywhere;
+	padding-bottom: 10px;
+}
+
+.app-page--amedama-kobo .amedama-page-meta {
+	color: var(--amedama-muted);
+	font-size: 0.92rem;
+	line-height: 1.7;
+	margin-top: 10px;
+}
+
+.app-page--amedama-kobo .amedama-content-card {
+	background: var(--amedama-card);
+	border: 1px solid var(--amedama-border);
+	border-radius: 12px;
+	box-shadow: 0 12px 26px rgba(52, 58, 56, 0.06);
+	font-size: 1rem;
+	line-height: 1.9;
+	overflow-wrap: anywhere;
+	padding: clamp(22px, 4vw, 42px);
+}
+
+.app-page--amedama-kobo .amedama-content-card > :first-child {
+	margin-top: 0;
+}
+
+.app-page--amedama-kobo .amedama-content-card > :last-child {
+	margin-bottom: 0;
+}
+
+.app-page--amedama-kobo .amedama-content-card h2,
+.app-page--amedama-kobo .amedama-content-card h3,
+.app-page--amedama-kobo .amedama-content-card h4 {
+	color: var(--amedama-text);
+	font-weight: 600;
+	line-height: 1.5;
+	margin: 1.85em 0 0.7em;
+}
+
+.app-page--amedama-kobo .amedama-content-card h2 {
+	border-left: 4px solid var(--amedama-candy);
+	font-size: 1.36rem;
+	padding-left: 12px;
+}
+
+.app-page--amedama-kobo .amedama-content-card h3 {
+	font-size: 1.16rem;
+}
+
+.app-page--amedama-kobo .amedama-content-card h4 {
+	font-size: 1.05rem;
+}
+
+.app-page--amedama-kobo .amedama-content-card p,
+.app-page--amedama-kobo .amedama-content-card ul,
+.app-page--amedama-kobo .amedama-content-card ol {
+	margin: 0 0 1.18em;
+}
+
+.app-page--amedama-kobo .amedama-content-card ul,
+.app-page--amedama-kobo .amedama-content-card ol {
+	padding-left: 1.45em;
+}
+
+.app-page--amedama-kobo .amedama-content-card li + li {
+	margin-top: 0.36em;
+}
+
+.app-page--amedama-kobo .amedama-content-card table {
+	border-collapse: collapse;
+	display: block;
+	margin: 1.4em 0;
+	max-width: 100%;
+	overflow-x: auto;
+	width: 100%;
+}
+
+.app-page--amedama-kobo .amedama-content-card th,
+.app-page--amedama-kobo .amedama-content-card td {
+	border: 1px solid var(--amedama-border);
+	padding: 10px 12px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.app-page--amedama-kobo .amedama-content-card th {
+	background: rgba(201, 157, 63, 0.12);
+	font-weight: 600;
+}
+
+.app-page--amedama-kobo .amedama-content-card img,
+.app-page--amedama-kobo .amedama-content-card iframe {
+	height: auto;
+	max-width: 100%;
+}
+
+@media (max-width: 760px) {
+	.app-page--amedama-kobo {
+		border-radius: 14px;
+		margin-top: 14px;
+		padding: 14px;
+	}
+
+	.app-page--amedama-kobo .breadcrumb {
+		margin-bottom: 14px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header {
+		padding: 20px 16px 22px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header__content {
+		align-items: flex-start;
+		gap: 12px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header__mark {
+		gap: 4px;
+		padding: 8px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header__mark-dot {
+		height: 13px;
+		width: 13px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header__title {
+		font-size: clamp(1.48rem, 7vw, 1.85rem);
+		line-height: 1.32;
+	}
+
+	.app-page--amedama-kobo .amedama-app-navigation {
+		margin-top: 12px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-navigation__list {
+		gap: 8px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-navigation__item {
+		flex: 1 1 150px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-navigation__link {
+		min-height: 46px;
+		padding: 10px 12px;
+		width: 100%;
+	}
+
+	.app-page--amedama-kobo .amedama-page-shell {
+		margin-top: 22px;
+	}
+}
+
+@media (max-width: 480px) {
+	.app-page--amedama-kobo {
+		margin-left: -18px;
+		margin-right: -18px;
+		padding: 14px;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header__content {
+		display: block;
+	}
+
+	.app-page--amedama-kobo .amedama-app-header__mark {
+		margin-bottom: 12px;
+		width: max-content;
+	}
+
+	.app-page--amedama-kobo .amedama-app-navigation__item {
+		flex: 1 1 100%;
+	}
+
+	.app-page--amedama-kobo .amedama-page-heading {
+		margin-bottom: 14px;
+	}
+
+	.app-page--amedama-kobo .amedama-page-title {
+		font-size: 1.42rem;
+		padding-bottom: 8px;
+	}
+
+	.app-page--amedama-kobo .amedama-page-meta {
+		font-size: 0.88rem;
+		margin-top: 8px;
+	}
+
+	.app-page--amedama-kobo .amedama-content-card {
+		border-radius: 10px;
+		font-size: 0.98rem;
+		line-height: 1.86;
+		padding: 20px 16px;
+	}
+}
