@@ -124,6 +124,7 @@
 }
 
 .app-page--amedama-kobo .amedama-app-navigation {
+	display: block;
 	margin: 16px 0 0;
 }
 
@@ -322,10 +323,12 @@
 
 	.app-page--amedama-kobo .amedama-app-navigation__list {
 		gap: 8px;
+		justify-content: center;
 	}
 
 	.app-page--amedama-kobo .amedama-app-navigation__item {
 		flex: 1 1 150px;
+		max-width: 260px;
 	}
 
 	.app-page--amedama-kobo .amedama-app-navigation__link {
@@ -356,7 +359,7 @@
 	}
 
 	.app-page--amedama-kobo .amedama-app-navigation__item {
-		flex: 1 1 100%;
+		flex: 0 1 260px;
 	}
 
 	.app-page--amedama-kobo .amedama-page-heading {
