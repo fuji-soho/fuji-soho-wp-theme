@@ -36,6 +36,30 @@ function fuji_register_post_types() {
   'rewrite' => array('slug' => 'works'),
   'taxonomies' => array('work_category'),
 ));
+
+  register_post_type('products', array(
+  'labels' => array(
+    'name'          => 'プロダクト一覧',
+    'singular_name' => 'プロダクト',
+    'add_new'       => '新規追加',
+    'add_new_item'  => 'プロダクトを追加',
+    'edit_item'     => 'プロダクトを編集',
+    'new_item'      => '新しいプロダクト',
+    'view_item'     => 'プロダクトを表示',
+    'search_items'  => 'プロダクトを検索',
+    'not_found'     => 'プロダクトはありません',
+    'not_found_in_trash' => 'ゴミ箱にプロダクトはありません',
+    'all_items'     => 'プロダクト一覧',
+    'menu_name'     => 'プロダクト',
+    'name_admin_bar'=> 'プロダクト',
+  ),
+  'public' => true,
+  'has_archive' => true,
+  'menu_position' => 6,
+  'menu_icon' => 'dashicons-products',
+  'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+  'rewrite' => array('slug' => 'products'),
+));
 }
 add_action('init', 'fuji_register_post_types');
 
@@ -64,6 +88,7 @@ add_action('after_setup_theme', function () {
   add_theme_support('post-thumbnails');
   add_image_size('work-thumb', 1600, 900, true); // 個別ページの16:9
   add_image_size('work-card', 600, 338, true);   // 関連カードの16:9
+  add_image_size('product-card', 600, 338, true); // Products一覧カードの16:9
 });
 
 // OGPタグを出力する関数
@@ -384,6 +409,78 @@ endif;
 
 //タイトルの自動挿入
 add_theme_support( 'title-tag' );
+
+// プロダクト
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+    'key' => 'group_product_detail',
+    'title' => 'プロダクト詳細情報',
+    'fields' => array(
+        array(
+            'key' => 'field_product_lead',
+            'label' => '短い紹介文',
+            'name' => 'product_lead',
+            'type' => 'textarea',
+            'instructions' => 'Products一覧カードに表示する短い紹介文',
+            'rows' => 3,
+        ),
+        array(
+            'key' => 'field_product_url',
+            'label' => 'リンク先URL',
+            'name' => 'product_url',
+            'type' => 'text',
+            'instructions' => '固定ページや外部サービスなど、詳細ページとして遷移させたいURL。例: /mimis-adventure/',
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'products',
+            ),
+        ),
+    ),
+));
+
+endif;
+
+function fuji_get_product_url( $post_id = null ) {
+  $post_id = $post_id ?: get_the_ID();
+  $product_url = get_permalink( $post_id );
+
+  if ( function_exists( 'get_field' ) ) {
+    $acf_product_url = get_field( 'product_url', $post_id );
+
+    if ( ! empty( $acf_product_url ) ) {
+      $product_url = $acf_product_url;
+    }
+  }
+
+  return $product_url;
+}
+
+function fuji_get_product_lead( $post_id = null ) {
+  $post_id = $post_id ?: get_the_ID();
+  $product_lead = '';
+
+  if ( function_exists( 'get_field' ) ) {
+    $acf_product_lead = get_field( 'product_lead', $post_id );
+
+    if ( ! empty( $acf_product_lead ) ) {
+      $product_lead = $acf_product_lead;
+    }
+  }
+
+  if ( '' === $product_lead ) {
+    $product_lead = has_excerpt( $post_id )
+      ? get_the_excerpt( $post_id )
+      : wp_trim_words( wp_strip_all_tags( get_post_field( 'post_content', $post_id ) ), 80 );
+  }
+
+  return $product_lead;
+}
 
 // ミミの冒険 固定ページの言語判定
 function fuji_mimis_adventure_get_page_language( $post = null ) {

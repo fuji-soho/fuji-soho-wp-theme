@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <nav class="main-nav" aria-label="メインメニュー">
       <a href="/#services">サービス</a>
       <a href="/works">制作実績</a>
+      <a href="/products">プロダクト</a>
       <a href="/blog">ブログ</a>
       <a href="/#about">自己紹介</a>
       <a href="/contact" class="cta">お問い合わせ</a>
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <a href="/">トップ</a>
     <a href="/#services">サービス</a>
     <a href="/works">制作実績</a>
+    <a href="/products">プロダクト</a>
     <a href="/blog">ブログ</a>
     <a href="/#about">自己紹介</a>
     <a href="/contact" class="cta">お問い合わせ</a>

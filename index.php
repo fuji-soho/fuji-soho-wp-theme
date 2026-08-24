@@ -125,6 +125,71 @@
   </div>
 </section>
 
+  <?php
+  $product_query = new WP_Query(array(
+    'post_type'      => 'products',
+    'posts_per_page' => 3,
+    'post_status'    => 'publish',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+  ));
+  ?>
+  <?php if ($product_query->have_posts()): ?>
+  <!-- プロダクトセクション -->
+  <section id="products" class="home-products">
+    <div class="works">
+      <div class="home-section-header">
+        <h2>プロダクト</h2>
+      </div>
+
+      <div class="home-products__grid">
+        <?php while ($product_query->have_posts()): $product_query->the_post(); ?>
+          <?php
+          $product_url = fuji_get_product_url();
+          $product_lead = fuji_get_product_lead();
+          ?>
+          <?php if (0 === $product_query->current_post): ?>
+            <div class="home-products__primary">
+          <?php endif; ?>
+            <article class="product-card">
+              <a class="product-card__link" href="<?php echo esc_url($product_url); ?>">
+                <div class="product-card__thumb">
+                  <?php if (has_post_thumbnail()): ?>
+                    <?php
+                    the_post_thumbnail(
+                      'product-card',
+                      array(
+                        'alt' => esc_attr(get_the_title()),
+                      )
+                    );
+                    ?>
+                  <?php else: ?>
+                    <div class="product-card__thumb-placeholder" aria-hidden="true"></div>
+                  <?php endif; ?>
+                </div>
+
+                <div class="product-card__body">
+                  <h3 class="product-card__title"><?php the_title(); ?></h3>
+                  <?php if (!empty($product_lead)): ?>
+                    <p class="product-card__lead"><?php echo esc_html($product_lead); ?></p>
+                  <?php endif; ?>
+                  <span class="product-card__button">詳しく見る</span>
+                </div>
+              </a>
+            </article>
+          <?php if (0 === $product_query->current_post): ?>
+              <p class="home-products__archive-link">
+                <a href="<?php echo esc_url(get_post_type_archive_link('products')); ?>">すべてのプロダクトを見る →</a>
+              </p>
+            </div>
+          <?php endif; ?>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
   <!-- ブログ記事セクション -->
   <section id="blog" style="margin-top:40px">
     <div class="works">
