@@ -186,6 +186,9 @@
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
       </div>
+      <p class="home-products__archive-link home-products__archive-link--mobile">
+        <a href="<?php echo esc_url(get_post_type_archive_link('products')); ?>">すべてのプロダクトを見る →</a>
+      </p>
     </div>
   </section>
   <?php endif; ?>

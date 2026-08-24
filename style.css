@@ -1070,6 +1070,10 @@ footer .footer-inner {
   margin: 14px 0 0;
 }
 
+.home-products__archive-link--mobile {
+  display: none;
+}
+
 .home-products__grid {
   align-items: start;
   display: grid;
@@ -1116,6 +1120,14 @@ footer .footer-inner {
 
   .home-products__grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-products__primary .home-products__archive-link {
+    display: none;
+  }
+
+  .home-products__archive-link--mobile {
+    display: block;
   }
 }
 
