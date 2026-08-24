@@ -1082,7 +1082,31 @@ footer .footer-inner {
 }
 
 .home-products__primary {
+  max-width: 100%;
   min-width: 0;
+}
+
+.home-products .product-card,
+.home-products .product-card__link,
+.home-products .product-card__thumb {
+  max-width: 100%;
+}
+
+.home-products .product-card__thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.home-products .product-card__thumb img {
+  display: block;
+  height: 100%;
+  inset: 0;
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
 }
 
 @media (max-width: 1023px) {
