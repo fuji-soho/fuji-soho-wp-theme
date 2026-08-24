@@ -3,7 +3,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>?73">
+  <link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>?<?php echo esc_attr( filemtime( get_stylesheet_directory() . '/style.css' ) ); ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <script>
