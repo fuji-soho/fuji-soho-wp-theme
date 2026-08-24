@@ -7,6 +7,11 @@
 
 $amedama_nav_items = array(
 	array(
+		'label'           => __( 'アプリ紹介', 'fuji-soho-wp-theme' ),
+		'path'            => 'amedama-kobo',
+		'require_content' => true,
+	),
+	array(
 		'label' => __( 'プライバシーポリシー', 'fuji-soho-wp-theme' ),
 		'path'  => 'amedama-kobo/privacy-policy',
 	),
@@ -24,6 +29,10 @@ foreach ( $amedama_nav_items as $amedama_nav_item ) {
 	$amedama_nav_page = get_page_by_path( $amedama_nav_item['path'] );
 
 	if ( $amedama_nav_page instanceof WP_Post && 'publish' === get_post_status( $amedama_nav_page ) ) {
+		if ( ! empty( $amedama_nav_item['require_content'] ) && '' === trim( $amedama_nav_page->post_content ) ) {
+			continue;
+		}
+
 		$amedama_nav_links[] = array(
 			'label'   => $amedama_nav_item['label'],
 			'url'     => get_permalink( $amedama_nav_page ),
